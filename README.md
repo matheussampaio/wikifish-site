@@ -1,1 +1,4 @@
-# wikifish-site
+# Wikifish Site
+
+## License
+MIT
