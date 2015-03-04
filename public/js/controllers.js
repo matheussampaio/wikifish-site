@@ -4,16 +4,19 @@
 
 var wfApp = angular.module("wfApp.controllers", []);
 
-var scp;
-wfApp.controller("wfCtrl", function ($scope, $http) {
-    scp = $scope;
-
+wfApp.controller("wfIndexCtrl", function ($scope, $http) {
     $scope.menu = {
         list: [
-            "Home",
-            "Catalog",
-            "Others"
+            "Home"
+
         ],
         current: "Home"
     }
+});
+
+wfApp.controller("wfHomeCtrl", function ($scope, $http) {
+});
+
+wfApp.controller("wfSearchCtrl", function ($scope, $routeParams) {
+    $scope.term = decodeURIComponent($routeParams.term);
 });

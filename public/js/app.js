@@ -12,10 +12,14 @@ var wfApp = angular.module('wfApp', [
 ]);
 
 wfApp.config(function ($routeProvider, $locationProvider) {
-    $routeProvider.
+    var when = $routeProvider.
         when('/', {
             templateUrl: 'partials/index',
-            controller: 'wfCtrl'
+            controller: 'wfHomeCtrl'
+        }).
+        when('/search/:term', {
+            templateUrl: 'partials/search',
+            controller: 'wfSearchCtrl'
         }).
         otherwise({
             redirectTo: '/'

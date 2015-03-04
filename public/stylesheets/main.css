@@ -1703,8 +1703,8 @@ body {
   font-family: "Lato", sans-serif;
   font-size: 20px;
   line-height: 1.5;
-  color: #f0e7d5;
-  background-color: #252525;
+  color: #333333;
+  background-color: #fff;
 }
 
 /* line 36, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_scaffolding.scss */
@@ -1719,12 +1719,12 @@ textarea {
 
 /* line 48, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_scaffolding.scss */
 a {
-  color: #ffaa00;
+  color: #337ab7;
   text-decoration: none;
 }
 /* line 52, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_scaffolding.scss */
 a:hover, a:focus {
-  color: #ffdd00;
+  color: #23527c;
   text-decoration: underline;
 }
 /* line 58, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_scaffolding.scss */
@@ -1760,7 +1760,7 @@ img {
 .img-thumbnail {
   padding: 4px;
   line-height: 1.5;
-  background-color: #252525;
+  background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 4px;
   -webkit-transition: all 0.2s ease-in-out;
@@ -1781,7 +1781,7 @@ hr {
   margin-top: 30px;
   margin-bottom: 30px;
   border: 0;
-  border-top: 1px solid white;
+  border-top: 1px solid #eeeeee;
 }
 
 /* line 125, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_scaffolding.scss */
@@ -1831,7 +1831,7 @@ h6 .small,
 .h6 .small {
   font-weight: normal;
   line-height: 1;
-  color: #cccccc;
+  color: #777777;
 }
 
 /* line 24, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_type.scss */
@@ -1978,7 +1978,7 @@ mark,
 
 /* line 102, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_type.scss */
 .text-muted {
-  color: #cccccc;
+  color: #777777;
 }
 
 /* line 5, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/mixins/_text-emphasis.scss */
@@ -2090,7 +2090,7 @@ a.bg-danger:hover {
 .page-header {
   padding-bottom: 14px;
   margin: 60px 0 30px;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #eeeeee;
 }
 
 /* line 149, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_type.scss */
@@ -2178,7 +2178,7 @@ dd {
 abbr[title],
 abbr[data-original-title] {
   cursor: help;
-  border-bottom: 1px dotted #cccccc;
+  border-bottom: 1px dotted #777777;
 }
 
 /* line 235, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_type.scss */
@@ -2192,7 +2192,7 @@ blockquote {
   padding: 15px 30px;
   margin: 0 0 30px;
   font-size: 25px;
-  border-left: 5px solid white;
+  border-left: 5px solid #eeeeee;
 }
 /* line 250, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_type.scss */
 blockquote p:last-child,
@@ -2207,7 +2207,7 @@ blockquote .small {
   display: block;
   font-size: 80%;
   line-height: 1.5;
-  color: #cccccc;
+  color: #777777;
 }
 /* line 265, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_type.scss */
 blockquote footer:before,
@@ -2221,7 +2221,7 @@ blockquote .small:before {
 blockquote.pull-right {
   padding-right: 15px;
   padding-left: 0;
-  border-right: 5px solid white;
+  border-right: 5px solid #eeeeee;
   border-left: 0;
   text-align: right;
 }
@@ -2294,7 +2294,7 @@ pre {
   line-height: 1.5;
   word-break: break-all;
   word-wrap: break-word;
-  color: #4d4d4d;
+  color: #333333;
   background-color: #f5f5f5;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -3442,7 +3442,7 @@ table {
 caption {
   padding-top: 8px;
   padding-bottom: 8px;
-  color: #cccccc;
+  color: #777777;
   text-align: left;
 }
 
@@ -3489,7 +3489,7 @@ th {
 }
 /* line 62, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_tables.scss */
 .table .table {
-  background-color: #252525;
+  background-color: #fff;
 }
 
 /* line 75, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_tables.scss */
@@ -3720,7 +3720,7 @@ legend {
   margin-bottom: 30px;
   font-size: 30px;
   line-height: inherit;
-  color: #4d4d4d;
+  color: #333333;
   border: 0;
   border-bottom: 1px solid #e5e5e5;
 }
@@ -3780,7 +3780,7 @@ output {
   padding-top: 7px;
   font-size: 20px;
   line-height: 1.5;
-  color: white;
+  color: #555555;
 }
 
 /* line 115, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_forms.scss */
@@ -3791,7 +3791,7 @@ output {
   padding: 6px 12px;
   font-size: 20px;
   line-height: 1.5;
-  color: white;
+  color: #555555;
   background-color: #fff;
   background-image: none;
   border: 1px solid #ccc;
@@ -3825,7 +3825,7 @@ output {
 /* line 141, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_forms.scss */
 .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
   cursor: not-allowed;
-  background-color: white;
+  background-color: #eeeeee;
   opacity: 1;
 }
 
@@ -4248,7 +4248,7 @@ select[multiple].input-lg,
   display: block;
   margin-top: 5px;
   margin-bottom: 10px;
-  color: white;
+  color: #737373;
 }
 
 @media (min-width: 768px) {
@@ -4579,7 +4579,7 @@ select[multiple].input-lg,
 
 /* line 88, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_buttons.scss */
 .btn-link {
-  color: #ffaa00;
+  color: #337ab7;
   font-weight: normal;
   border-radius: 0;
 }
@@ -4595,13 +4595,13 @@ select[multiple].input-lg,
 }
 /* line 107, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_buttons.scss */
 .btn-link:hover, .btn-link:focus {
-  color: #ffdd00;
+  color: #23527c;
   text-decoration: underline;
   background-color: transparent;
 }
 /* line 115, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_buttons.scss */
 .btn-link[disabled]:hover, .btn-link[disabled]:focus, fieldset[disabled] .btn-link:hover, fieldset[disabled] .btn-link:focus {
-  color: #cccccc;
+  color: #777777;
   text-decoration: none;
 }
 
@@ -4757,14 +4757,14 @@ tbody.collapse.in {
   clear: both;
   font-weight: normal;
   line-height: 1.5;
-  color: #4d4d4d;
+  color: #333333;
   white-space: nowrap;
 }
 
 /* line 77, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_dropdowns.scss */
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
   text-decoration: none;
-  color: #404040;
+  color: #262626;
   background-color: #f5f5f5;
 }
 
@@ -4778,7 +4778,7 @@ tbody.collapse.in {
 
 /* line 102, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_dropdowns.scss */
 .dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
-  color: #cccccc;
+  color: #777777;
 }
 /* line 109, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_dropdowns.scss */
 .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
@@ -4816,7 +4816,7 @@ tbody.collapse.in {
   padding: 3px 20px;
   font-size: 17.5px;
   line-height: 1.5;
-  color: #cccccc;
+  color: #777777;
   white-space: nowrap;
 }
 
@@ -5155,9 +5155,9 @@ tbody.collapse.in {
   font-size: 20px;
   font-weight: normal;
   line-height: 1;
-  color: white;
+  color: #555555;
   text-align: center;
-  background-color: white;
+  background-color: #eeeeee;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
@@ -5275,23 +5275,23 @@ tbody.collapse.in {
 /* line 23, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_navs.scss */
 .nav > li > a:hover, .nav > li > a:focus {
   text-decoration: none;
-  background-color: white;
+  background-color: #eeeeee;
 }
 /* line 31, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_navs.scss */
 .nav > li.disabled > a {
-  color: #cccccc;
+  color: #777777;
 }
 /* line 34, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_navs.scss */
 .nav > li.disabled > a:hover, .nav > li.disabled > a:focus {
-  color: #cccccc;
+  color: #777777;
   text-decoration: none;
   background-color: transparent;
   cursor: not-allowed;
 }
 /* line 46, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_navs.scss */
 .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
-  background-color: white;
-  border-color: #ffaa00;
+  background-color: #eeeeee;
+  border-color: #337ab7;
 }
 /* line 59, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_navs.scss */
 .nav .nav-divider {
@@ -5323,12 +5323,12 @@ tbody.collapse.in {
 }
 /* line 89, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_navs.scss */
 .nav-tabs > li > a:hover {
-  border-color: white white #ddd;
+  border-color: #eeeeee #eeeeee #ddd;
 }
 /* line 96, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_navs.scss */
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
-  color: white;
-  background-color: #252525;
+  color: #555555;
+  background-color: #fff;
   border: 1px solid #ddd;
   border-bottom-color: transparent;
   cursor: default;
@@ -5421,7 +5421,7 @@ tbody.collapse.in {
   .nav-tabs.nav-justified > .active > a:hover,
   .nav-tabs-justified > .active > a:focus,
   .nav-tabs.nav-justified > .active > a:focus {
-    border-bottom-color: #252525;
+    border-bottom-color: #fff;
   }
 }
 
@@ -5980,7 +5980,7 @@ tbody.collapse.in {
 }
 /* line 536, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-inverse .navbar-brand {
-  color: #f2f2f2;
+  color: #9d9d9d;
 }
 /* line 538, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
@@ -5989,11 +5989,11 @@ tbody.collapse.in {
 }
 /* line 545, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-inverse .navbar-text {
-  color: #f2f2f2;
+  color: #9d9d9d;
 }
 /* line 550, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-inverse .navbar-nav > li > a {
-  color: #f2f2f2;
+  color: #9d9d9d;
 }
 /* line 553, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
@@ -6043,7 +6043,7 @@ tbody.collapse.in {
   }
   /* line 614, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
-    color: #f2f2f2;
+    color: #9d9d9d;
   }
   /* line 616, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
@@ -6063,7 +6063,7 @@ tbody.collapse.in {
 }
 /* line 642, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-inverse .navbar-link {
-  color: #f2f2f2;
+  color: #9d9d9d;
 }
 /* line 644, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-inverse .navbar-link:hover {
@@ -6071,7 +6071,7 @@ tbody.collapse.in {
 }
 /* line 649, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-inverse .btn-link {
-  color: #f2f2f2;
+  color: #9d9d9d;
 }
 /* line 651, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-inverse .btn-link:hover, .navbar-inverse .btn-link:focus {
@@ -6102,7 +6102,7 @@ tbody.collapse.in {
 }
 /* line 23, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_breadcrumbs.scss */
 .breadcrumb > .active {
-  color: #cccccc;
+  color: #777777;
 }
 
 /* line 4, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_pagination.scss */
@@ -6124,7 +6124,7 @@ tbody.collapse.in {
   padding: 6px 12px;
   line-height: 1.5;
   text-decoration: none;
-  color: #ffaa00;
+  color: #337ab7;
   background-color: #fff;
   border: 1px solid #ddd;
   margin-left: -1px;
@@ -6146,8 +6146,8 @@ tbody.collapse.in {
 .pagination > li > a:hover, .pagination > li > a:focus,
 .pagination > li > span:hover,
 .pagination > li > span:focus {
-  color: #ffdd00;
-  background-color: white;
+  color: #23527c;
+  background-color: #eeeeee;
   border-color: #ddd;
 }
 /* line 51, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_pagination.scss */
@@ -6168,7 +6168,7 @@ tbody.collapse.in {
 .pagination > .disabled > a,
 .pagination > .disabled > a:hover,
 .pagination > .disabled > a:focus {
-  color: #cccccc;
+  color: #777777;
   background-color: #fff;
   border-color: #ddd;
   cursor: not-allowed;
@@ -6245,7 +6245,7 @@ tbody.collapse.in {
 .pager li > a:hover,
 .pager li > a:focus {
   text-decoration: none;
-  background-color: white;
+  background-color: #eeeeee;
 }
 /* line 31, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_pager.scss */
 .pager .next > a,
@@ -6262,7 +6262,7 @@ tbody.collapse.in {
 .pager .disabled > a:hover,
 .pager .disabled > a:focus,
 .pager .disabled > span {
-  color: #cccccc;
+  color: #777777;
   background-color: #fff;
   cursor: not-allowed;
 }
@@ -6299,11 +6299,11 @@ a.label:hover, a.label:focus {
 
 /* line 44, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_labels.scss */
 .label-default {
-  background-color: #cccccc;
+  background-color: #777777;
 }
 /* line 7, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/mixins/_labels.scss */
 .label-default[href]:hover, .label-default[href]:focus {
-  background-color: #b3b3b3;
+  background-color: #5e5e5e;
 }
 
 /* line 48, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_labels.scss */
@@ -6363,7 +6363,7 @@ a.label:hover, a.label:focus {
   vertical-align: baseline;
   white-space: nowrap;
   text-align: center;
-  background-color: #cccccc;
+  background-color: #777777;
   border-radius: 10px;
 }
 /* line 22, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_badges.scss */
@@ -6382,7 +6382,7 @@ a.label:hover, a.label:focus {
 }
 /* line 40, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_badges.scss */
 .list-group-item.active > .badge, .nav-pills > .active > a > .badge {
-  color: #ffaa00;
+  color: #337ab7;
   background-color: #fff;
 }
 /* line 46, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_badges.scss */
@@ -6410,7 +6410,7 @@ a.badge:hover, a.badge:focus {
   padding: 30px 15px;
   margin-bottom: 30px;
   color: inherit;
-  background-color: white;
+  background-color: #eeeeee;
 }
 /* line 12, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_jumbotron.scss */
 .jumbotron h1,
@@ -6425,7 +6425,7 @@ a.badge:hover, a.badge:focus {
 }
 /* line 23, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_jumbotron.scss */
 .jumbotron > hr {
-  border-top-color: #e6e6e6;
+  border-top-color: #d5d5d5;
 }
 /* line 27, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_jumbotron.scss */
 .container .jumbotron, .container-fluid .jumbotron {
@@ -6458,7 +6458,7 @@ a.badge:hover, a.badge:focus {
   padding: 4px;
   margin-bottom: 30px;
   line-height: 1.5;
-  background-color: #252525;
+  background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 4px;
   -webkit-transition: border 0.2s ease-in-out;
@@ -6477,14 +6477,14 @@ a.badge:hover, a.badge:focus {
 /* line 27, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_thumbnails.scss */
 .thumbnail .caption {
   padding: 9px;
-  color: #f0e7d5;
+  color: #333333;
 }
 
 /* line 34, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_thumbnails.scss */
 a.thumbnail:hover,
 a.thumbnail:focus,
 a.thumbnail.active {
-  border-color: #ffaa00;
+  border-color: #337ab7;
 }
 
 /* line 9, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_alerts.scss */
@@ -6804,8 +6804,8 @@ a.list-group-item:hover, a.list-group-item:focus {
 
 /* line 64, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_list-group.scss */
 .list-group-item.disabled, .list-group-item.disabled:hover, .list-group-item.disabled:focus {
-  background-color: white;
-  color: #cccccc;
+  background-color: #eeeeee;
+  color: #777777;
   cursor: not-allowed;
 }
 /* line 72, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_list-group.scss */
@@ -6814,7 +6814,7 @@ a.list-group-item:hover, a.list-group-item:focus {
 }
 /* line 75, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_list-group.scss */
 .list-group-item.disabled .list-group-item-text, .list-group-item.disabled:hover .list-group-item-text, .list-group-item.disabled:focus .list-group-item-text {
-  color: #cccccc;
+  color: #777777;
 }
 /* line 81, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_list-group.scss */
 .list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
@@ -7248,7 +7248,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
 }
 /* line 6, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/mixins/_panels.scss */
 .panel-default > .panel-heading {
-  color: #4d4d4d;
+  color: #333333;
   background-color: #f5f5f5;
   border-color: #ddd;
 }
@@ -7259,7 +7259,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
 /* line 14, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/mixins/_panels.scss */
 .panel-default > .panel-heading .badge {
   color: #f5f5f5;
-  background-color: #4d4d4d;
+  background-color: #333333;
 }
 /* line 20, ../../../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/mixins/_panels.scss */
 .panel-default > .panel-footer + .panel-collapse > .panel-body {
@@ -8538,4 +8538,14 @@ button.close {
   .hidden-print {
     display: none !important;
   }
+}
+/* line 5, ../../sass/main.scss */
+.wf-logo, .wf-big-logo {
+  font-family: 'Volkhov', sans-serif;
+  font-size: 17.33333333px;
+}
+
+/* line 10, ../../sass/main.scss */
+.wf-big-logo {
+  font-size: 156px;
 }

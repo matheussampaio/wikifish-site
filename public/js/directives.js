@@ -26,10 +26,9 @@ wfApp.directive('wfList', function () {
         template:
             "<ul>" +
                 "<li ng-repeat='item in items' " +
-                "ng-bing='item' " +
+                "ng-bind='item' " +
                 "ng-class=\"{'wf-selected': item === selected}\" " +
                 "ng-click='selectItem(item)' >" +
-                    "{{item}}" +
                 "</li>" +
             "</ul>",
         scope: {
@@ -44,11 +43,73 @@ wfApp.directive('wfList', function () {
     };
 });
 
-wfApp.directive('wfFooter', function (MultiTransclude) {
+wfApp.directive('wfMenu', function ($location) {
     return {
         template:
-        "<footer>" +
-        "Footer" +
-        "</footer>"
+            "<nav>" +
+                "<ul>" +
+                    "<li ng-repeat='item in items' " +
+                    "ng-bind='item' " +
+                    "ng-class=\"{'wf-selected': item === selected}\" " +
+                    "ng-click='selectItem(item)' >" +
+                    "</li>" +
+                "</ul>" +
+            "</nav>",
+        scope: {
+            items: "=",
+            selected: "="
+        },
+        link: function (scope, elem, attrs) {
+            scope.selectItem = function (item) {
+                scope.selected = item;
+                $location.path(item);
+            }
+        }
+    };
+});
+
+wfApp.directive('wfSearch', function ($location) {
+    return {
+        restrict: 'E',
+        template:
+            "<form class='form-horizontal' role='form' name='searchFish' >" +
+                "<div class='form-group'>" +
+                    "<input class='form-control' type='text' ng-model='wf_search_term' placeholder='Pesquisar por peixes' />" +
+                "</div>" +
+                "<div class='form-group'>" +
+                    "<div class='text-center'>" +
+                        "<button class='btn btn-default' ng-click='submit()' ng-bind='button_text' />" +
+                    "</div>" +
+                "</div>" +
+            "</form>",
+        scope: {
+            button_text: "@buttontext"
+        },
+        link: function (scope, elem, attrs) {
+            scope.submit = function () {
+                $location.path('search/' + encodeURIComponent(scope.wf_search_term));
+            }
+        }
+    };
+});
+
+wfApp.directive('wfLogo', function () {
+    return {
+        template: '<h1 class="wf-logo">WikiFish</h1>'
+    }
+});
+
+wfApp.directive('wfBigLogo', function () {
+    return {
+        template: '<h1 class="wf-big-logo text-center">WikiFish</h1>'
+    }
+});
+
+
+wfApp.directive('wfFooter', function () {
+    return {
+        template:
+            "<footer>" +
+            "</footer>"
     };
 });

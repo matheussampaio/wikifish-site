@@ -1,3 +1,13 @@
 @import "base";
 @import "bootstrap";
 
+
+.wf-logo {
+  font-family: 'Volkhov', sans-serif;
+  font-size: $font-size-h1 / 3;
+}
+
+.wf-big-logo {
+  @extend .wf-logo;
+  font-size: $font-size-h1 * 3;
+}
