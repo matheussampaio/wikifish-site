@@ -1,5 +1,5 @@
 {
-  "name": "application-name",
+  "name": "wikifish-site",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
@@ -11,7 +11,8 @@
     "express": "~4.10.1",
     "jade": "~1.7.0",
     "method-override": "^2.3.0",
-    "morgan": "^1.5.0"
+    "morgan": "^1.5.0",
+    "node-compass": "^0.2.4"
   },
   "scripts": {
     "prestart": "npm install",

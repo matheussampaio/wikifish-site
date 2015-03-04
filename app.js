@@ -10,12 +10,10 @@ var express = require('express'),
     routes = require('./routes'),
     api = require('./routes/api'),
     http = require('http'),
-    sass = require('node-sass-middleware'),
     compass = require('node-compass'),
     path = require('path');
 
 var app = module.exports = express();
-
 
 /**
  * Configuration
@@ -31,6 +29,10 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(methodOverride());
+
+app.use(compass({
+    logging: true
+}));
 
 app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use('/node_modules', express.static(__dirname + '/node_modules'));
