@@ -1,0 +1,8 @@
+nav.navbar.navbar-default
+    .container
+        .navbar-header
+            a.navbar-brand(href="/") Wikifish
+
+        ul.nav.navbar-nav
+            li(ng-repeat="item in items", ng-class="{'active': item.title === active}" )
+                a(ng-bind="item.title", ng-href="item.url")

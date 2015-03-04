@@ -1,7 +1,5 @@
 wf-site
-    .container(transclude-to='site-head')
-        wf-logo
-        wf-menu(items='menu.list', selected='menu.current')
+    wf-navbar(transclude-to='site-head')
     .container(transclude-to='site-body')
         wf-big-logo
         wf-search(buttontext='Pesquisar')

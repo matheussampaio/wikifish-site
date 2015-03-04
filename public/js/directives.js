@@ -21,6 +21,27 @@ wfApp.directive('wfSite', function (MultiTransclude) {
     };
 });
 
+wfApp.directive('wfNavbar', function ($location) {
+    return {
+        scope: {},
+        templateUrl: 'partials/wfNavbar',
+        link: function (scope, iElem, iAttrs) {
+            scope.items = [
+                {title: 'Home', url: '/'}
+            ];
+
+            var lPath = $location.path();
+
+            scope.items.forEach(function(item) {
+                if (item.url === lPath) {
+                    scope.active = item.title;
+                }
+            })
+
+        }
+    };
+});
+
 wfApp.directive('wfList', function () {
     return {
         template:
@@ -93,18 +114,11 @@ wfApp.directive('wfSearch', function ($location) {
     };
 });
 
-wfApp.directive('wfLogo', function () {
-    return {
-        template: '<h1 class="wf-logo">WikiFish</h1>'
-    }
-});
-
 wfApp.directive('wfBigLogo', function () {
     return {
         template: '<h1 class="wf-big-logo text-center">WikiFish</h1>'
     }
 });
-
 
 wfApp.directive('wfFooter', function () {
     return {
