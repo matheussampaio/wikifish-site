@@ -13,7 +13,7 @@ wfApp.directive('wfSite', function (MultiTransclude) {
                 "<header transclude-id='site-head'></header>" +
                 "<nav transclude-id='site-menu'></nav>" +
                 "<main transclude-id='site-body'></main>" +
-                "<footer></footer>" +
+                "<wf-footer></wf-footer>" +
             "</div>",
         link: function (scope, iElem, iAttrs, ctrl, transclude) {
             MultiTransclude.transclude(iElem, transclude);
@@ -29,6 +29,7 @@ wfApp.directive('wfList', function () {
                 "ng-bing='item' " +
                 "ng-class=\"{'wf-selected': item === selected}\" " +
                 "ng-click='selectItem(item)' >" +
+                    "{{item}}" +
                 "</li>" +
             "</ul>",
         scope: {
@@ -40,5 +41,14 @@ wfApp.directive('wfList', function () {
                 scope.selected = item;
             }
         }
+    };
+});
+
+wfApp.directive('wfFooter', function (MultiTransclude) {
+    return {
+        template:
+        "<footer>" +
+        "Footer" +
+        "</footer>"
     };
 });
