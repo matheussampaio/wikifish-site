@@ -2,26 +2,18 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', []).
-  controller('AppCtrl', function ($scope, $http) {
+var wfApp = angular.module("wfApp.controllers", []);
 
-    $http({
-      method: 'GET',
-      url: '/api/name'
-    }).
-    success(function (data, status, headers, config) {
-      $scope.name = data.name;
-    }).
-    error(function (data, status, headers, config) {
-      $scope.name = 'Error!';
-    });
+var scp;
+wfApp.controller("wfCtrl", function ($scope, $http) {
+    scp = $scope;
 
-  }).
-  controller('MyCtrl1', function ($scope) {
-    // write Ctrl here
-
-  }).
-  controller('MyCtrl2', function ($scope) {
-    // write Ctrl here
-
-  });
+    $scope.menu = {
+        list: [
+            "Home",
+            "Catalog",
+            "Others"
+        ],
+        current: "Home"
+    }
+});

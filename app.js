@@ -24,6 +24,10 @@ var app = module.exports = express();
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
+// view engine setup
+//app.set('views', path.join(__dirname, 'views'));
+//app.engine('html', require('ejs').renderFile);
+
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -54,10 +58,10 @@ if (env === 'production') {
 app.get('/', routes.index);
 app.get('/partials/:name', routes.partials);
 
-// JSON API
+//JSON API
 app.get('/api/name', api.name);
 
-// redirect all others to the index (HTML5 history)
+//redirect all others to the index (HTML5 history)
 app.get('*', routes.index);
 
 

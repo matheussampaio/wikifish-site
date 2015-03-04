@@ -2,26 +2,24 @@
 
 // Declare app level module which depends on filters, and services
 
-angular.module('myApp', [
-  'ngRoute',
-  'myApp.controllers',
-  'myApp.filters',
-  'myApp.services',
-  'myApp.directives'
-]).
-config(function ($routeProvider, $locationProvider) {
-  $routeProvider.
-    when('/view1', {
-      templateUrl: 'partials/partial1',
-      controller: 'MyCtrl1'
-    }).
-    when('/view2', {
-      templateUrl: 'partials/partial2',
-      controller: 'MyCtrl2'
-    }).
-    otherwise({
-      redirectTo: '/view1'
-    });
+var wfApp = angular.module('wfApp', [
+    'ngRoute',
+    'wfApp.controllers',
+    'wfApp.factory',
+    'wfApp.filters',
+    'wfApp.services',
+    'wfApp.directives'
+]);
 
-  $locationProvider.html5Mode(true);
+wfApp.config(function ($routeProvider, $locationProvider) {
+    $routeProvider.
+        when('/', {
+            templateUrl: 'partials/index',
+            controller: 'wfCtrl'
+        }).
+        otherwise({
+            redirectTo: '/'
+        });
+
+    $locationProvider.html5Mode(true);
 });
