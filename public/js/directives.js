@@ -95,7 +95,7 @@ wfApp.directive('wfSearch', function ($location) {
         template:
             "<form class='form-horizontal' role='form' name='searchFish' >" +
                 "<div class='form-group'>" +
-                    "<input class='form-control' type='text' ng-model='wf_search_term' placeholder='Pesquisar por peixes' />" +
+                    "<input class='form-control' type='text' ng-model='wf_search_term'/>" +
                 "</div>" +
                 "<div class='form-group'>" +
                     "<div class='text-center'>" +
@@ -110,6 +110,8 @@ wfApp.directive('wfSearch', function ($location) {
             scope.submit = function () {
                 $location.path('search/' + encodeURIComponent(scope.wf_search_term));
             }
+
+            elem.find('input').focus();
         }
     };
 });

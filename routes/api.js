@@ -1,9 +1,17 @@
-/*
- * Serve JSON to our AngularJS client
- */
+var express = require('express');
+var router = express.Router();
 
-exports.name = function (req, res) {
-  res.json({
-    name: 'Bob'
-  });
-};
+/*
+ User Routers
+ */
+var userRouter = require('./user');
+router.use('/user', userRouter);
+
+/*
+ Fish Routers
+ */
+var fishRouter = require('./fish');
+router.use('/fish', fishRouter);
+
+
+module.exports = router;

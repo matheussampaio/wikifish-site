@@ -7,7 +7,7 @@ var express = require('express'),
     methodOverride = require('method-override'),
     errorHandler = require('errorhandler'),
     morgan = require('morgan'),
-    routes = require('./routes'),
+    index = require('./routes/index'),
     api = require('./routes/api'),
     http = require('http'),
     compass = require('node-compass'),
@@ -15,10 +15,33 @@ var express = require('express'),
 
 var app = module.exports = express();
 
-/**
- * Configuration
- */
 
+
+/**
+ * Database Configuration
+ */
+var mongoose = require('mongoose');
+
+// Here we find an appropriate database to connect to, defaulting to
+// localhost if we don't find one.
+var uristring =
+    process.env.MONGOLAB_URI ||
+    process.env.MONGOHQ_URL ||
+    'mongodb://localhost/wikifish-site';
+
+// Makes connection asynchronously. Mongoose will queue up database
+// operations and release them when the connection is complete.
+mongoose.connect(uristring, function (err, res) {
+    if (err) {
+        console.log('ERROR connecting to: ' + uristring + '. ' + err);
+    } else {
+        console.log('Succeeded connected to: ' + uristring);
+    }
+});
+
+/**
+ * Express Configuration
+ */
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
@@ -55,14 +78,14 @@ if (env === 'production') {
  */
 
 // serve index and view partials
-app.get('/', routes.index);
-app.get('/partials/:name', routes.partials);
+app.use('/', index);
+//app.get('/partials/:name', routes.partials);
 
 //JSON API
-app.get('/api/name', api.name);
+app.use('/api', api);
 
 //redirect all others to the index (HTML5 history)
-app.get('*', routes.index);
+//app.get('*', routes.index);
 
 
 /**
