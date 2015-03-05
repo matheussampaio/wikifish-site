@@ -22,13 +22,13 @@ router.post('/', function (req, res) {
     user.firstname = req.param('firstname').toLowerCase();
     user.lastname = req.param('lastname').toLowerCase();
 
-    User.find({"username": req.param('username').toLowerCase()}).exec(function (err, users) {
+    user.find({"username": req.param('username').toLowerCase()}).exec(function (err, users) {
         if (!err) {
 
             if (users.length > 0) {
                 res.status(400).json({'status': 'failed', 'err': 'username already registered.'});
             } else {
-                User.find({"email": req.param('email').toLowerCase()}).exec(function (err, users) {
+                user.find({"email": req.param('email').toLowerCase()}).exec(function (err, users) {
                     if (!err) {
 
                         if (users.length > 0) {
@@ -58,7 +58,7 @@ router.post('/', function (req, res) {
  - id
  */
 router.get('/', function (req, res) {
-    User.findById(req.param('id')).exec(function (err, users) {
+    user.findById(req.param('id')).exec(function (err, users) {
         if (!err) {
             res.status(200).send({ 'users': users });
         }
@@ -92,7 +92,7 @@ router.post('/edit', function (req, res) {
         update['lastname'] = req.param('lastname').toLowerCase();
 
 
-    User.findByIdAndUpdate(req.param('id'), update, function (err, data) {
+    user.findByIdAndUpdate(req.param('id'), update, function (err, data) {
         if (err) {
             res.status(200).json({'status': 'failed', 'err': err.stack});
         } else if (data) {
@@ -114,7 +114,7 @@ router.post('/edit', function (req, res) {
 router.get('/login', function (req, res) {
     var rules = {'username': req.param('username'), 'password': req.param('password')};
 
-    User.find(rules).exec(function (err, users) {
+    user.find(rules).exec(function (err, users) {
         if (!err) {
             res.status(200).json({ 'users': users });
         }
@@ -128,7 +128,7 @@ router.get('/login', function (req, res) {
  */
 router.get('/all', function (req, res) {
 
-    User.find({}).exec(function (err, result) {
+    user.find({}).exec(function (err, result) {
         if (!err) {
             res.status(200).json({ 'users': result });
         }
