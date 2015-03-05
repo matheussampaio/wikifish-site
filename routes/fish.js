@@ -35,13 +35,26 @@ router.post('/', function (req, res) {
 
 });
 
+router.get('/search/:term', function (req, res) {
+    var term = req.param('term');
+
+    Fish.find().or([{'usual_name' : new RegExp(term, 'i')}, {'cientific_name' : new RegExp(term, 'i')}]).exec(function(err, fishs) {
+        if (err) {
+            res.status(400).json(err);
+        } else {
+            res.status(200).json(fishs);
+        }
+    });
+
+});
+
 /*
  Recuperar todas as informações dos peixes no servidor.
  */
-router.get('/all', function (req, res) {
+router.get('/', function (req, res) {
     Fish.find({}).exec(function (err, result) {
         if (!err) {
-            res.status(200).json({ 'fish': result });
+            res.status(200).json(result);
         }
     });
 });

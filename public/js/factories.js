@@ -1,6 +1,6 @@
 'use strict';
 
-var wfApp = angular.module('wfApp.factory', []);
+var wfApp = angular.module('wfApp.factories', []);
 
 wfApp.factory("MultiTransclude", function () {
     return {

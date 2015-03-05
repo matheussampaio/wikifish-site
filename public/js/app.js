@@ -5,7 +5,7 @@
 var wfApp = angular.module('wfApp', [
     'ngRoute',
     'wfApp.controllers',
-    'wfApp.factory',
+    'wfApp.factories',
     'wfApp.filters',
     'wfApp.services',
     'wfApp.directives'

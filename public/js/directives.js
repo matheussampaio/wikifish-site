@@ -108,7 +108,7 @@ wfApp.directive('wfSearch', function ($location) {
         },
         link: function (scope, elem, attrs) {
             scope.submit = function () {
-                $location.path('search/' + encodeURIComponent(scope.wf_search_term));
+                $location.path('/search/' + encodeURIComponent(scope.wf_search_term));
             }
 
             elem.find('input').focus();

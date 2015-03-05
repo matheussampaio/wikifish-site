@@ -130,7 +130,7 @@ router.get('/all', function (req, res) {
 
     user.find({}).exec(function (err, result) {
         if (!err) {
-            res.status(200).json({ 'users': result });
+            res.status(200).json(result);
         }
     });
 

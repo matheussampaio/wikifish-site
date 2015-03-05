@@ -1,4 +1,6 @@
 wf-site
     wf-navbar(transclude-to='site-head')
     .container(transclude-to='site-body')
-        p {{term}}
+        ul
+            li(ng-repeat='fish in data.fishs')
+                p {{fish.usual_name}}
