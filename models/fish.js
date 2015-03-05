@@ -7,9 +7,8 @@ var mongoose = require('mongoose');
 
 // define the schema for our user model
 var fishSchema = new mongoose.Schema({
-    id: { type: Number, required: true, unique: true },
-    usual_name: { type: String, trim: true, required: true },
-    cientific_name: { type: String, trim: true, required: true },
+    usual_name: { type: String, trim: true, required: true, lowercase: true, unique: true },
+    cientific_name: { type: String, trim: true, required: true, lowercase: true, unique: true },
     ph: Number,
     dh: Number,
     temperature: Number,
