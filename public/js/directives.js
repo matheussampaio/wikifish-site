@@ -27,7 +27,7 @@ wfApp.directive('wfNavbar', function ($location) {
         templateUrl: 'partials/wfNavbar',
         link: function (scope, iElem, iAttrs) {
             scope.items = [
-                {title: 'Home', url: '/'}
+                {title: 'Home', url: '#/'}
             ];
 
             var lPath = $location.path();
@@ -116,6 +116,55 @@ wfApp.directive('wfSearch', function ($location) {
     };
 });
 
+wfApp.directive('wfFishThumbnail', function ($location) {
+    return {
+        restrict: 'E',
+        template:
+            '<div class="wf-fish-thumbnail" ng-click="gotoFishDetail()">' +
+                '<img ng-src="http://placehold.it/175x175&text={{fish.usual_name}}" wf-spinner-on-load>' +
+                '<div>' +
+                    '<img ng-src="http://placehold.it/175x25/888/000&text={{fish.usual_name}}">' +
+                '</div>' +
+            '</div>',
+        scope: {
+            fish: '=fish'
+        },
+        link: function (scope, elem, attrs) {
+            scope.gotoFishDetail = function() {
+                $location.path("/fish/" + scope.fish._id);
+            }
+        }
+    }
+});
+
+wfApp.directive('wfFishDetail', function ($location) {
+    return {
+        restrict: 'E',
+        template:
+            '<div class="wf-fish-detail">' +
+                '<img class="wf-fish-icon" ng-src="http://placehold.it/400x400&text={{data.fish.usual_name}}" wf-spinner-on-load>' +
+                '<div class="wf-fish-infos">' +
+                    '<p ng-show="data.fish.usual_name">Nome Usual: {{data.fish.usual_name | ucfirst}}</p>' +
+                    '<p ng-show="data.fish.cientific_name">Nome Cientifico: {{data.fish.cientific_name | ucfirst}}</p>' +
+                    '<p ng-show="data.fish.ph">PH: {{data.fish.ph}}</p>' +
+                    '<p ng-show="data.fish.dh">DH: {{data.fish.dh}}</p>' +
+                    '<p ng-show="data.fish.temperature">Temperatura: {{data.fish.dh}}</p>' +
+                    '<p ng-show="data.fish.maximum_length">Tamanho Máximo: {{data.fish.maximum_length}}cm</p>' +
+                    '<p ng-show="data.fish.aquarium_liters">Tamanho Aquario: {{data.fish.aquarium_liters}} L</p>' +
+                    '<p ng-show="data.fish.aquarium_setup">Configuração do Aquario: {{data.fish.aquarium_setup}}</p>' +
+                    '<p ng-show="data.fish.alimentation">Alimentação: {{data.fish.alimentation}}</p>' +
+                    '<p ng-show="data.fish.reproduction">Reprodução: {{data.fish.reproduction}}</p>' +
+                    '<p ng-show="data.fish.temperament">Temperamento: {{data.fish.temperament}}</p>' +
+                    '<p ng-show="data.fish.swimming">Swimming: {{data.fish.swimming}}</p>' +
+                    '<p ng-show="data.fish.region">Região: {{data.fish.region}}</p>' +
+                '</div>' +
+            '</div>',
+        scope: true,
+        link: function (scope, elem, attrs) {
+        }
+    }
+});
+
 wfApp.directive('wfBigLogo', function () {
     return {
         template: '<h1 class="wf-big-logo text-center">WikiFish</h1>'
@@ -128,4 +177,13 @@ wfApp.directive('wfFooter', function () {
             "<footer>" +
             "</footer>"
     };
+});
+
+wfApp.directive('wfSpinnerOnLoad', function () {
+    return {
+        restrict: 'A',
+        link: function (scope, elem, attrs) {
+            console.log('load finish');
+        }
+    }
 });

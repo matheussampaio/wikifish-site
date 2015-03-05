@@ -4,6 +4,7 @@
 
 var wfApp = angular.module('wfApp', [
     'ngRoute',
+    'angular.filter',
     'wfApp.controllers',
     'wfApp.factories',
     'wfApp.filters',
@@ -21,9 +22,13 @@ wfApp.config(function ($routeProvider, $locationProvider) {
             templateUrl: 'partials/search',
             controller: 'wfSearchCtrl'
         }).
+        when('/fish/:id', {
+            templateUrl: 'partials/fish_detail',
+            controller: 'wfFishDetailCtrl'
+        }).
         otherwise({
             redirectTo: '/'
         });
 
-    $locationProvider.html5Mode(true);
+    //$locationProvider.html5Mode(true);
 });

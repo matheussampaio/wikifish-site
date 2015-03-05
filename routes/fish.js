@@ -48,6 +48,16 @@ router.get('/search/:term', function (req, res) {
 
 });
 
+router.get('/:id', function (req, res) {
+    Fish.find({ _id: req.param('id') }).exec(function(err, fish) {
+        if (err) {
+            res.status(400).json(err);
+        } else {
+            res.status(200).json(fish);
+        }
+    });
+});
+
 /*
  Recuperar todas as informações dos peixes no servidor.
  */

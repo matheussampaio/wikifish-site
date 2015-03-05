@@ -8,6 +8,9 @@ wfApp.factory("Fish", function ($resource) {
             method: 'GET',
             url : '/api/fish/search/:term',
             isArray: true
+        },
+        get: {
+            isArray: true
         }
     });
 });

@@ -1,7 +1,6 @@
 @import "base";
 @import "bootstrap";
 
-
 .wf-logo {
   font-family: 'Volkhov', sans-serif;
   font-size: $font-size-h1;
@@ -10,4 +9,27 @@
 .wf-big-logo {
   @extend .wf-logo;
   font-size: $font-size-h1 * 3;
+}
+
+.wf-fish-thumbnail {
+  display: inline-block;
+  padding: $spacing-unit / 2;
+  cursor: pointer;
+}
+
+.wf-fish-detail {
+  @extend .panel;
+  @extend .panel-default;
+
+  padding: $spacing-unit / 2;
+
+  img.wf-fish-icon {
+    vertical-align: top;
+    margin-right: $spacing-unit;
+  }
+
+  .wf-fish-infos {
+    display: inline-block;
+  }
+
 }
