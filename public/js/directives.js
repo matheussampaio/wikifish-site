@@ -120,8 +120,10 @@ wfApp.directive('wfFishThumbnail', function ($location) {
     return {
         restrict: 'E',
         template:
-            '<div class="wf-fish-thumbnail" ng-click="gotoFishDetail()">' +
-                '<img ng-src="http://placehold.it/175x175&text={{fish.usual_name}}" wf-spinner-on-load>' +
+            '<div class="panel panel-default wf-fish-thumbnail" ng-click="gotoFishDetail()">' +
+                '<div class="wf-fish-icon-container">' +
+                    '<img class="wf-fish-icon" ng-src="{{fish.url_picture}}" wf-loading>' +
+                '</div>' +
                 '<div>' +
                     '<img ng-src="http://placehold.it/175x25/888/000&text={{fish.usual_name}}">' +
                 '</div>' +
@@ -142,7 +144,9 @@ wfApp.directive('wfFishDetail', function ($location) {
         restrict: 'E',
         template:
             '<div class="wf-fish-detail">' +
-                '<img class="wf-fish-icon" ng-src="http://placehold.it/400x400&text={{data.fish.usual_name}}" wf-spinner-on-load>' +
+                '<div class="wf-fish-icon-container">' +
+                    '<img class="wf-fish-icon" ng-src="{{data.fish.url_picture}}" wf-loading>' +
+                '</div>' +
                 '<div class="wf-fish-infos">' +
                     '<p ng-show="data.fish.usual_name">Nome Usual: {{data.fish.usual_name | ucfirst}}</p>' +
                     '<p ng-show="data.fish.cientific_name">Nome Cientifico: {{data.fish.cientific_name | ucfirst}}</p>' +
@@ -179,11 +183,23 @@ wfApp.directive('wfFooter', function () {
     };
 });
 
-wfApp.directive('wfSpinnerOnLoad', function () {
+wfApp.directive('wfLoading', function () {
     return {
         restrict: 'A',
         link: function (scope, elem, attrs) {
-            console.log('load finish');
+            elem.parent().append('<i class="fa fa-circle-o-notch fa-spin fa-4x"></i>');
+            elem.addClass('ng-hide');
+
+            elem.on('load', function() {
+                elem.parent().find('i').remove();
+                elem.removeClass('ng-hide');
+            });
+
+            elem.on('error', function() {
+                console.log('Error loading image');
+                elem.parent().find('i').remove();
+                elem.parent().append('<i class="wf-loading-error-icon fa fa-picture-o fa-4x"></i>');
+            });
         }
     }
 });

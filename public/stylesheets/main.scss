@@ -13,8 +13,22 @@
 
 .wf-fish-thumbnail {
   display: inline-block;
-  padding: $spacing-unit / 2;
+  padding: $spacing-unit / 4;
+  margin-right: $spacing-unit / 2;
   cursor: pointer;
+
+
+  img.wf-fish-icon {
+    height: auto;
+    width: auto;
+    max-width: 175px;
+    max-height: 175px;
+  }
+
+  .wf-fish-icon-container {
+    width: 175px;
+    height: 175px;
+  }
 }
 
 .wf-fish-detail {
@@ -24,12 +38,22 @@
   padding: $spacing-unit / 2;
 
   img.wf-fish-icon {
-    vertical-align: top;
-    margin-right: $spacing-unit;
+    height: auto;
+    width: auto;
+    max-width: 400px;
+    max-height: 400px;
   }
 
   .wf-fish-infos {
     display: inline-block;
+  }
+
+  .wf-fish-icon-container {
+    height: 400px;
+    width: 400px;
+    margin-right: 30px;
+    display: inline-block;
+    vertical-align: top;
   }
 
 }
