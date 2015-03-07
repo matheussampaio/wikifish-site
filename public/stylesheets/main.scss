@@ -1,5 +1,6 @@
 @import "base";
 @import "bootstrap";
+@import "compass/css3/border-radius";
 
 .wf-logo {
   font-family: 'Volkhov', sans-serif;
@@ -56,4 +57,19 @@
     vertical-align: top;
   }
 
+}
+
+button.wf-btn-social {
+  @include border-top-radius(4px !important);
+  @include border-bottom-radius(4px !important);
+
+  margin-bottom: 8px;
+  width: 328px !important;
+}
+
+.wf-form-input {
+  margin: 0 auto;
+  float: none;
+  width: 328px;
+  height: 46px;
 }

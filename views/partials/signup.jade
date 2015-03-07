@@ -1,0 +1,30 @@
+wf-site
+    wf-navbar(transclude-to='site-head')
+    .container.text-center(transclude-to='site-body')
+        .btn-group-vertical(role="group")
+            button.btn.btn-lg.btn-google.btn-danger.wf-btn-social(ua-oauth-link="google")
+                i.fa.fa-google
+                |  Registra-se com o <b>Google</b>
+            button.btn.btn-lg.btn-github.btn-default.wf-btn-social(ua-oauth-link="github")
+                i.fa.fa-github
+                |  Registra-se com o <b>GitHub</b>
+            button.btn.btn-lg.btn-facebook.btn-primary.wf-btn-social(ua-oauth-link="facebook")
+                i.fa.fa-facebook
+                |  Registra-se com o <b>Facebook</b></button>
+
+        p.text-center ou
+
+        form(ua-signup)
+            p(ng-show"error") {{ error.message }}
+            .form-group
+                input.form-control.wf-form-input(name="login", type="text", placeholder="Coloque o seu login")
+            .form-group
+                input.form-control.wf-form-input(name="email", type="email", placeholder="Coloque o seu email")
+            .form-group
+                input.form-control.wf-form-input(name="password", type="password", placeholder="Senha")
+            .form-group.form-inline
+                button.btn.btn-default(type="submit")
+                    span(ng-hide="loading") Registrar
+                    span(ng-show="loading")
+                        i.fa.fa-cog.fa-spin
+                a(href="#/signup")  ou registre-se

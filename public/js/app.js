@@ -9,26 +9,22 @@ var wfApp = angular.module('wfApp', [
     'wfApp.factories',
     'wfApp.filters',
     'wfApp.services',
-    'wfApp.directives'
+    'wfApp.directives',
+    'UserApp'
 ]);
 
 wfApp.config(function ($routeProvider, $locationProvider) {
-    var when = $routeProvider.
-        when('/', {
-            templateUrl: 'partials/index',
-            controller: 'wfHomeCtrl'
-        }).
-        when('/search/:term', {
-            templateUrl: 'partials/search',
-            controller: 'wfSearchCtrl'
-        }).
-        when('/fish/:id', {
-            templateUrl: 'partials/fish_detail',
-            controller: 'wfFishDetailCtrl'
-        }).
-        otherwise({
-            redirectTo: '/'
-        });
+    $routeProvider.when('/', {templateUrl: 'partials/index', controller: 'wfHomeCtrl', public: true});
 
-    //$locationProvider.html5Mode(true);
+    $routeProvider.when('/search/:term', {templateUrl: 'partials/search', controller: 'wfSearchCtrl', public: true});
+    $routeProvider.when('/fish/:id', {templateUrl: 'partials/fish_detail', controller: 'wfFishDetailCtrl', public: true});
+
+    $routeProvider.when('/login', {templateUrl: 'partials/login', login: true});
+    $routeProvider.when('/signup', { templateUrl: 'partials/signup', public: true});
+
+    $routeProvider.otherwise({ redirectTo: '/'});
+});
+
+wfApp.run(function(user) {
+    user.init({ appId: '54fa33a3161df' });
 });

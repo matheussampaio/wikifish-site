@@ -4,5 +4,15 @@ nav.navbar.navbar-default
             a.navbar-brand(ng-href="#/") Wikifish
 
         ul.nav.navbar-nav
-            li(ng-repeat="item in items", ng-class="{'active': item.title === active}" )
-                a(ng-bind="item.title", ng-href="{{item.url}}")
+            li(ng-repeat="item in items", ng-class="{'active': item.url === active}" )
+                a(ng-bind="item.title", ng-href="#{{item.url}}")
+
+        ul.nav.navbar-nav.navbar-right
+            li(ng-hide="user.authenticated", ng-class="{'active': '/login' === active}")
+                a(href="#/login") Login
+            li(ng-hide="user.authenticated", ng-class="{'active': '/signup' === active}")
+                a(href="#/signup") Registrar
+            li(ng-show="user.authenticated", ng-class="{'active': '/profile' === active}")
+                a(href="#/profile") {{user.email}}
+            li(ng-show="user.authenticated")
+                a(href="#" ua-logout) Logout

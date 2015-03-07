@@ -23,21 +23,14 @@ wfApp.directive('wfSite', function (MultiTransclude) {
 
 wfApp.directive('wfNavbar', function ($location) {
     return {
-        scope: {},
+        scope: true,
         templateUrl: 'partials/wfNavbar',
         link: function (scope, iElem, iAttrs) {
             scope.items = [
-                {title: 'Home', url: '#/'}
+                {title: 'Home', url: '/'}
             ];
 
-            var lPath = $location.path();
-
-            scope.items.forEach(function(item) {
-                if (item.url === lPath) {
-                    scope.active = item.title;
-                }
-            })
-
+            scope.active = $location.path();
         }
     };
 });
