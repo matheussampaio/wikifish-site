@@ -13,7 +13,16 @@
     "node-compass": "^0.2.4"
   },
   "scripts": {
-    "prestart": "npm install",
+    "prestart": "gulp build",
     "start": "node app.js"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-babel": "^4.0.0",
+    "gulp-clean": "^0.3.1",
+    "gulp-compass": "^2.0.3",
+    "gulp-minify-css": "^0.5.1",
+    "gulp-nodemon": "^1.0.5",
+    "run-sequence": "^1.0.2"
   }
 }
