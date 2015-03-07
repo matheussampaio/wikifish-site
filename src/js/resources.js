@@ -2,7 +2,7 @@
 
 var wfApp = angular.module('wfApp.resources', ['ngResource']);
 
-wfApp.factory("Fish", function ($resource) {
+wfApp.factory("Fish", ($resource) => {
     return $resource('/api/fish/:id', {}, {
         search: {
             method: 'GET',

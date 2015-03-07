@@ -13,8 +13,8 @@ var wfApp = angular.module('wfApp', [
     'UserApp'
 ]);
 
-wfApp.config(function ($routeProvider, $locationProvider) {
-    $routeProvider.when('/', {templateUrl: 'partials/index', controller: 'wfHomeCtrl', public: true});
+wfApp.config(($routeProvider, $locationProvider) => {
+    $routeProvider.when('/', {templateUrl: 'partials/index', public: true});
 
     $routeProvider.when('/search/:term', {templateUrl: 'partials/search', controller: 'wfSearchCtrl', public: true});
     $routeProvider.when('/fish/:id', {templateUrl: 'partials/fish_detail', controller: 'wfFishDetailCtrl', public: true});
@@ -25,6 +25,6 @@ wfApp.config(function ($routeProvider, $locationProvider) {
     $routeProvider.otherwise({ redirectTo: '/'});
 });
 
-wfApp.run(function(user) {
+wfApp.run((user) => {
     user.init({ appId: '54fa33a3161df' });
 });

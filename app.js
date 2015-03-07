@@ -74,14 +74,9 @@ if (env === 'production') {
 
 // serve index and view partials
 app.use('/', index);
-//app.get('/partials/:name', routes.partials);
 
 //JSON API
 app.use('/api', api);
-
-//redirect all others to the index (HTML5 history)
-//app.get('*', routes.index);
-
 
 /**
  * Start Server

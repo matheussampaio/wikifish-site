@@ -1,0 +1,18 @@
+div.wf-fish-detail
+   div.wf-fish-icon-container
+      img.wf-fish-icon(ng-src='{{data.fish.url_picture}}', wf-loading)
+
+   div.wf-fish-infos
+      p(ng-show='data.fish.usual_name') Nome Usual: {{data.fish.usual_name | ucfirst}}
+      p(ng-show='data.fish.cientific_name') Nome Cientifico: {{data.fish.cientific_name | ucfirst}}
+      p(ng-show='data.fish.ph') PH: {{data.fish.ph}}
+      p(ng-show='data.fish.dh') DH: {{data.fish.dh}}
+      p(ng-show='data.fish.temperature') Temperatura: {{data.fish.dh}}
+      p(ng-show='data.fish.maximum_length') Tamanho Máximo: {{data.fish.maximum_length}}cm
+      p(ng-show='data.fish.aquarium_liters') Tamanho Aquario: {{data.fish.aquarium_liters}} L
+      p(ng-show='data.fish.aquarium_setup') Configuração do Aquario: {{data.fish.aquarium_setup}}
+      p(ng-show='data.fish.alimentation') Alimentação: {{data.fish.alimentation}}
+      p(ng-show='data.fish.reproduction') Reprodução: {{data.fish.reproduction}}
+      p(ng-show='data.fish.temperament') Temperamento: {{data.fish.temperament}}
+      p(ng-show='data.fish.swimming') Swimming: {{data.fish.swimming}}
+      p(ng-show='data.fish.region') Região: {{data.fish.region}}

@@ -2,12 +2,12 @@
 
 var wfApp = angular.module('wfApp.factories', []);
 
-wfApp.factory("MultiTransclude", function () {
+wfApp.factory("MultiTransclude", () => {
     return {
-        transclude: function (elem, transcludeFn) {
-            transcludeFn(function (clone) {
+        transclude: (elem, transcludeFn) => {
+            transcludeFn((clone) => {
 
-                angular.forEach(clone, function (cloneEl) {
+                angular.forEach(clone, (cloneEl) => {
                     // get desired target ID
                     var tId = cloneEl.attributes["transclude-to"].value;
 

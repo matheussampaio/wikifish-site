@@ -46,7 +46,7 @@ gulp.task('develop', function () {
             script: 'app.js',
             ext: 'scss js',
             env: { 'NODE_ENV': 'development' },
-            ignore: ['public/**', '.sass-cache/**', 'node_modules'],
+            ignore: ['public/**', '.sass-cache/**', 'node_modules/**'],
             nodeArgs: ['--debug']
         })
         .on('start', ['build'])
