@@ -50,8 +50,5 @@ gulp.task('develop', function () {
             nodeArgs: ['--debug']
         })
         .on('start', ['build'])
-        .on('change', ['build'])
-        .on('restart', function () {
-            console.log('restarted!')
-        })
+        .on('change', ['build']);
 })
