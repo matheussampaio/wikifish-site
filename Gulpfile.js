@@ -5,6 +5,7 @@ var babel = require('gulp-babel');
 var clean = require('gulp-clean');
 var compass = require('gulp-compass');
 var minifyCSS = require('gulp-minify-css');
+var uglify = require('gulp-uglify');
 
 var runSequence = require('run-sequence');
 
@@ -15,7 +16,7 @@ var dist = 'public';
 var src = ['src/**/*.js'];
 
 gulp.task('build-clean', function() {
-   return gulp.src(dist, {read: false})
+   gulp.src(dist, {read: false})
         .pipe(clean());
 });
 
@@ -32,10 +33,16 @@ gulp.task('build-compass', function() {
 });
 
 gulp.task('build-convert-es6', function() {
-    return gulp.src(src)
+    gulp.src(src)
         .pipe(babel())
         .pipe(gulp.dest(dist));
 });
+
+gulp.task('compress', function() {
+    gulp.src(path.join(dist, '**/*.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest(dist))
+})
 
 gulp.task('build', function() {
     runSequence('build-clean', ['build-convert-es6', 'build-compass']);
