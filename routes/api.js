@@ -1,17 +1,23 @@
 var express = require('express');
 var router = express.Router();
 
-/*
- User Routers
- */
-var userRouter = require('./user');
-router.use('/user', userRouter);
+var Comment = require('../models/comment');
 
-/*
- Fish Routers
- */
-var fishRouter = require('./fish');
-router.use('/fish', fishRouter);
+module.exports = function (app) {
 
+    /*
+     User Routers
+     */
+    var userRouter = require('./user');
+    router.use('/user', userRouter);
 
-module.exports = router;
+    /*
+     Fish Routers
+     */
+    var fishRouter = require('./fish');
+    router.use('/fish', fishRouter);
+
+    Comment.register(app, '/api/comment');
+
+    return router;
+};

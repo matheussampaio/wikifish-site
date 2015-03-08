@@ -72,12 +72,13 @@ if (env === 'production') {
  * Routes
  */
 
+// API
+app.use('/api', api(app));
+
+
 // serve index and view partials
 app.get('/', index.index);
 app.get('/partials/:name', index.partials);
-
-//JSON API
-app.use('/api', api);
 
 app.get('*', index.index);
 
