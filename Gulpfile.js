@@ -9,19 +9,19 @@ var uglify = require('gulp-uglify');
 
 var runSequence = require('run-sequence');
 
-var nodemon = require('gulp-nodemon')
+var nodemon = require('gulp-nodemon');
 
 var dist = 'public';
 
 var src = ['src/**/*.js'];
 
 gulp.task('build-clean', function() {
-   gulp.src(dist, {read: false})
+   return gulp.src(dist, {read: false})
         .pipe(clean());
 });
 
 gulp.task('build-compass', function() {
-    gulp.src('src/**/*.scss')
+    return gulp.src('src/**/*.scss')
         .pipe(compass({
             project: __dirname,
             css: path.join(dist, 'stylesheets'),
@@ -33,19 +33,19 @@ gulp.task('build-compass', function() {
 });
 
 gulp.task('build-convert-es6', function() {
-    gulp.src(src)
+    return gulp.src(src)
         .pipe(babel())
         .pipe(gulp.dest(dist));
 });
 
 gulp.task('compress', function() {
-    gulp.src(path.join(dist, '**/*.js'))
+    return gulp.src(path.join(dist, '**/*.js'))
         .pipe(uglify())
         .pipe(gulp.dest(dist))
-})
+});
 
 gulp.task('build', function() {
-    runSequence('build-clean', ['build-convert-es6', 'build-compass']);
+    runSequence('build-clean', 'build-convert-es6', 'build-compass');
 });
 
 gulp.task('develop', function () {
@@ -58,4 +58,4 @@ gulp.task('develop', function () {
         })
         .on('start', ['build'])
         .on('change', ['build']);
-})
+});

@@ -23,6 +23,8 @@ wfApp.config(($routeProvider, $locationProvider) => {
     $routeProvider.when('/signup', { templateUrl: 'partials/signup', public: true});
 
     $routeProvider.otherwise({ redirectTo: '/'});
+
+    $locationProvider.html5Mode(true);
 });
 
 wfApp.run((user) => {

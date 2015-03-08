@@ -73,10 +73,13 @@ if (env === 'production') {
  */
 
 // serve index and view partials
-app.use('/', index);
+app.get('/', index.index);
+app.get('/partials/:name', index.partials);
 
 //JSON API
 app.use('/api', api);
+
+app.get('*', index.index);
 
 /**
  * Start Server
