@@ -21,7 +21,7 @@ gulp.task('build-clean', function() {
 });
 
 gulp.task('build-compass', function() {
-    return gulp.src('src/**/*.scss')
+    gulp.src('src/**/*.scss')
         .pipe(compass({
             project: __dirname,
             css: path.join(dist, 'stylesheets'),
@@ -33,7 +33,7 @@ gulp.task('build-compass', function() {
 });
 
 gulp.task('build-convert-es6', function() {
-    return gulp.src(src)
+    gulp.src(src)
         .pipe(babel())
         .pipe(gulp.dest(dist));
 });
@@ -45,7 +45,7 @@ gulp.task('compress', function() {
 });
 
 gulp.task('build', function() {
-    runSequence('build-clean', 'build-convert-es6', 'build-compass');
+    runSequence('build-clean', ['build-convert-es6', 'build-compass']);
 });
 
 gulp.task('develop', function () {
@@ -53,8 +53,7 @@ gulp.task('develop', function () {
             script: 'app.js',
             ext: 'scss js',
             env: { 'NODE_ENV': 'development' },
-            ignore: ['public/**', '.sass-cache/**', 'node_modules/**'],
-            nodeArgs: ['--debug']
+            ignore: ['public/**', '.sass-cache/**', 'node_modules/**']
         })
         .on('start', ['build'])
         .on('change', ['build']);

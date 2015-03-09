@@ -2,24 +2,22 @@
 
 /* Controllers */
 
-var wfApp = angular.module("wfApp.controllers", ['wfApp.resources']);
+var wfApp = angular.module("wfApp.controllers", []);
 
-wfApp.controller("wfFishDetailCtrl", ($scope, $routeParams, Fish) => {
-    $scope.data = {
-        fish: []
-    };
+wfApp.controller("wfFishDetailCtrl", ($scope, $routeParams, FishService, CommentsService) => {
+    var fishid = decodeURIComponent($routeParams.id);
+    $scope.vm = {};
 
-    Fish.get({'id':  decodeURIComponent($routeParams.id)}, (fish) => {
-        $scope.data.fish = fish[0];
-    });
+    $scope.vm.fish = FishService.requestFish(fishid);
+    $scope.vm.comments = CommentsService.requestComments(fishid);
 });
 
 wfApp.controller("wfSearchCtrl", ($scope, $routeParams, Fish) => {
-    $scope.data = {
+    $scope.vm = {
         fishs: []
     };
 
     Fish.search({'term':  decodeURIComponent($routeParams.term)}, (data) => {
-        $scope.data.fishs = data;
+        $scope.vm.fishs = data;
     });
 });

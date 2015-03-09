@@ -35,7 +35,7 @@ wfApp.directive('wfNavbar', ($location) => {
     };
 });
 
-wfApp.directive('wfMenu', ($location) =>{
+wfApp.directive('wfMenu', ($location) => {
     return {
         template: `
             <nav>
@@ -110,14 +110,6 @@ wfApp.directive('wfFishThumbnail', ($location) => {
     }
 });
 
-wfApp.directive('wfFishDetail', () => {
-    return {
-        restrict: 'E',
-        templateUrl: 'partials/wfFishDetail',
-        scope: true
-    }
-});
-
 wfApp.directive('wfBigLogo', () => {
     return {
         template: '<h1 class="wf-big-logo text-center">WikiFish</h1>'
@@ -147,6 +139,45 @@ wfApp.directive('wfLoading', () => {
                 elem.parent().find('i').remove();
                 elem.parent().append('<i class="wf-loading-error-icon fa fa-picture-o fa-4x"></i>');
             });
+        }
+    }
+});
+
+wfApp.directive('wfFishComments', () => {
+    return {
+        restrict: 'E',
+        templateUrl: 'partials/wfFishComment',
+        scope: {
+            comment: '='
+        }
+    }
+});
+
+wfApp.directive('wfFishNewComment', (Comment, CommentsService) => {
+    return {
+        restrict: 'E',
+        templateUrl: 'partials/wfFishNewComment',
+        scope: {
+            user: '=',
+            fish: '='
+        },
+        link: (scope) => {
+            scope.sendComment = () => {
+
+                var newComment = {
+                    parent: scope.fish._id,
+                    text: scope.text,
+                    user: scope.user.login
+                };
+
+                CommentsService.saveComment(newComment).
+                    then((data) => {
+                        scope.text = '';
+                    }, (error) => {
+                        console.error('Houve algum error', data);
+                    });
+
+            };
         }
     }
 });

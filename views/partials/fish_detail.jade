@@ -1,4 +1,32 @@
 wf-site
    wf-navbar(transclude-to='site-head')
    .container(transclude-to='site-body')
-      wf-fish-detail(fish='data.fish')
+      .wf-fish-detail
+         .wf-fish-icon-container
+            img.wf-fish-icon(ng-src='{{vm.fish.data.url_picture}}', wf-loading)
+
+         .wf-fish-infos
+            p(ng-show='vm.fish.data.usual_name') Nome Usual: {{vm.fish.data.usual_name | ucfirst}}
+            p(ng-show='vm.fish.data.cientific_name') Nome Cientifico: {{vm.fish.data.cientific_name | ucfirst}}
+            p(ng-show='vm.fish.data.ph') PH: {{vm.fish.data.ph}}
+            p(ng-show='vm.fish.data.dh') DH: {{vm.fish.data.dh}}
+            p(ng-show='vm.fish.data.temperature') Temperatura: {{vm.fish.data.dh}}
+            p(ng-show='vm.fish.data.maximum_length') Tamanho Máximo: {{vm.fish.data.maximum_length}}cm
+            p(ng-show='vm.fish.data.aquarium_liters') Tamanho Aquario: {{vm.fish.data.aquarium_liters}} L
+            p(ng-show='vm.fish.data.aquarium_setup') Configuração do Aquario: {{vm.fish.data.aquarium_setup}}
+            p(ng-show='vm.fish.data.alimentation') Alimentação: {{vm.fish.data.alimentation}}
+            p(ng-show='vm.fish.data.reproduction') Reprodução: {{vm.fish.data.reproduction}}
+            p(ng-show='vm.fish.data.temperament') Temperamento: {{vm.fish.data.temperament}}
+            p(ng-show='vm.fish.data.swimming') Swimming: {{vm.fish.data.swimming}}
+            p(ng-show='vm.fish.data.region') Região: {{vm.fish.data.region}}
+
+      wf-fish-new-comment(user='user', fish='vm.fish.data')
+
+      .wf-fish-comments
+         .wf-fish-comment(ng-repeat='comment in vm.comments.data')
+            .wf-comment-info
+               .wf-comment-user {{comment.user}}
+               .wf-comment-score {{comment.score}}
+               .wf-comment-updated {{comment.updated | date:'dd/MM/yyyy HH:mm'}}
+
+               p {{comment.text}}

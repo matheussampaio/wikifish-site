@@ -1,29 +1,29 @@
 wf-site
     wf-navbar(transclude-to='site-head')
     .container.text-center(transclude-to='site-body')
-        .btn-group-vertical(role="group")
-            button.btn.btn-lg.btn-google.btn-danger.wf-btn-social(ua-oauth-link="google")
+        .btn-group-vertical(role='group')
+            button.btn.btn-lg.btn-google.btn-danger.wf-btn-social(ua-oauth-link='google')
                 i.fa.fa-google
                 |  Entrar com o <b>Google</b>
-            button.btn.btn-lg.btn-github.btn-default.wf-btn-social(ua-oauth-link="github")
+            button.btn.btn-lg.btn-github.btn-default.wf-btn-social(ua-oauth-link='github')
                 i.fa.fa-github
                 |  Entrar com o <b>GitHub</b>
-            button.btn.btn-lg.btn-facebook.btn-primary.wf-btn-social(ua-oauth-link="facebook")
+            button.btn.btn-lg.btn-facebook.btn-primary.wf-btn-social(ua-oauth-link='facebook')
                 i.fa.fa-facebook
                 |  Entrar com o <b>Facebook</b></button>
 
         p.text-center ou
 
         form.form-horizontal(ua-login)
-            p(ng-show"error") {{ error.message }}
+            p(ng-show'error') {{ error.message }}
             .form-group
-                input.form-control.wf-form-input(name="login", type="text", placeholder="Login (username)")
+                input.form-control.wf-form-input(name='login', type='text', placeholder='Login (username)')
             .form-group
-                input.form-control.wf-form-input(name="password", type="password", placeholder="Senha")
+                input.form-control.wf-form-input(name='password', type='password', placeholder='Senha')
             .form-group
-                button.btn.btn-default(type="submit")
-                    span(ng-hide="loading") Entrar
-                    span(ng-show="loading")
+                button.btn.btn-default(type='submit')
+                    span(ng-hide='loading') Entrar
+                    span(ng-show='loading')
                         i.fa.fa-cog.fa-spin
-                a(href="#/signup")  ou registre-se
+                a(href='/signup')  ou registre-se
 
