@@ -132,6 +132,12 @@ wfApp.directive("wfFishNewComment", function (Comment, CommentsService) {
                     console.error("Houve algum error", data);
                 });
             };
+
+            if (scope.user.authenticated) {
+                scope.placeholder = "Deixe um comentário...";
+            } else {
+                scope.placeholder = "Faça o login para deixar um comentário.";
+            }
         }
     };
 });
@@ -145,6 +151,9 @@ wfApp.directive("wfComment", function (CommentsService) {
             user: "="
         },
         link: function (scope, element) {
+
+            console.log(scope.comment.likes, scope.user.login);
+
             scope.data = {
                 likes: scope.comment.likes.length,
                 already_like: scope.comment.likes.indexOf(scope.user.login) !== -1

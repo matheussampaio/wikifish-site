@@ -171,6 +171,13 @@ wfApp.directive('wfFishNewComment', (Comment, CommentsService) => {
                     });
 
             };
+
+
+            if (scope.user.authenticated) {
+                scope.placeholder = 'Deixe um comentário...';
+            } else {
+                scope.placeholder = 'Faça o login para deixar um comentário.';
+            }
         }
     }
 });
@@ -184,6 +191,7 @@ wfApp.directive('wfComment', (CommentsService) => {
             user: '='
         },
         link: (scope, element) => {
+
             scope.data = {
                 likes: scope.comment.likes.length,
                 already_like: scope.comment.likes.indexOf(scope.user.login) !== -1

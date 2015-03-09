@@ -27,6 +27,7 @@ $btn-default-border: rgba(0, 0, 0, 0.1);
 $input-bg: $forms-bg;
 $input-color: #fff;
 $input-border: $input-bg;
+$input-bg-disabled: darken($input-bg, 5%);
 
 /* Navbar Bootstrap */
 $navbar-default-bg: #2B3844;

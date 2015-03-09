@@ -1,5 +1,5 @@
-.form(ng-show='user.authenticated', name='wfNewCommentForm', novalidate, role='form')
+.form(name='wfNewCommentForm', novalidate, role='form')
    .form-group
-      textarea.form-control(name='text', type='text', ng-model='text', rows="3", placeholder='Comentário', required)
+      textarea.form-control(name='text', type='text', ng-model='text', rows="3", placeholder='{{placeholder}}', required, ng-disabled='!user.authenticated')
    .form-group
-      button.btn.btn-default(type='submit', ng-click='sendComment()', ng-disabled='!text', ng-class='{"btn-primary": text}') Enviar
+      button.btn.btn-default(type='submit', ng-click='sendComment()', ng-disabled='!user.authenticated || !text', ng-class='{"btn-primary": text}') Enviar
