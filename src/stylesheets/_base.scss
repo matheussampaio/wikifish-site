@@ -1,20 +1,49 @@
 @import "compass/layout";
 
-// Our variables
-//$font-family-base: 'Lato', sans-serif;
-//$font-size-base: 20px;
-
-//$font-size-small: $font-size-base * 0.875;
-//$line-height-base: 1.5;
-
+/* Others */
 $spacing-unit: 30px;
 
-//$text-color: #f0e7d5;
-//$body-bg: #252525;
-//$link-color: #ffaa00;
-//$link-hover-color: #ffdd00;
+/* Colors */
+$forms-bg: #414C57;
 
-//$gray-base: #CCC;
-//$gray-light: lighten($gray-base, 0%);
-//$gray-dark: darken($gray-base, 50%);
+$gray-base: #fff;
 
+/* Scaffolding */
+$text-color: #D8D8D8;
+$body-bg: #252833;
+$link-color: #48ceff;
+$link-hover-color: darken($link-color, 20%);
+
+/* Typography */
+$font-family-base: 'Lato', sans-serif;
+
+/* Buttons Bootstrap */
+$btn-default-bg: #566;
+$btn-default-color: $text-color;
+$btn-default-border: $btn-default-bg;
+$btn-default-border: rgba(0, 0, 0, 0.1);
+
+/* Forms Bootstrap */
+$input-bg: $forms-bg;
+$input-color: #fff;
+$input-border: $input-bg;
+
+/* Navbar Bootstrap */
+$navbar-default-bg: #2B3844;
+$navbar-default-brand-hover-color: $link-color;
+$navbar-default-link-color: $text-color;
+$navbar-default-link-color: $text-color;
+$navbar-default-link-active-color: $link-color;
+$navbar-default-link-hover-color: $link-color;
+
+/* Panels Bootstrap */
+$panel-bg: $forms-bg;
+$panel-default-border: $btn-default-border;
+$panel-default-text: $text-color;
+$panel-default-heading-bg: $navbar-default-bg;
+
+/* List Group Bootstrap */
+$list-group-bg: $forms-bg;
+$list-group-border: rgba(0, 0, 0, 0.1);
+$list-group-active-text-color: red;
+$list-group-disabled-color: blue;
