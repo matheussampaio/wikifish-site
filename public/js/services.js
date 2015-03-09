@@ -10,10 +10,7 @@ wfApp.factory("Fish", function ($resource) {
     return $resource("/api/fish/:id", {}, {
         search: {
             method: "GET",
-            url: "/api/fish/search/:term",
-            isArray: true
-        },
-        get: {
+            url: "/api/fish/search?term=:term",
             isArray: true
         }
     });
@@ -37,18 +34,22 @@ wfApp.factory("Comment", function ($resource) {
 });
 
 wfApp.factory("CommentsService", function (Comment) {
-    var commentsService = { data: [] };
+    var commentsService = {};
 
     commentsService.requestComments = function (fishid) {
-        Comment.get({ fish: fishid }, function (comments) {
-            commentsService.data = comments;
+        Comment.fish({ fish: fishid }, function (comments) {
+            commentsService.comments = comments;
         });
 
         return commentsService;
     };
 
     commentsService.pushComment = function (comment) {
-        commentsService.data.push(comment);
+        if (!commentsService.comments) {
+            commentsService.comments = [];
+        }
+
+        commentsService.comments.push(comment);
     };
 
     commentsService.saveComment = function (newComment) {
@@ -62,9 +63,9 @@ wfApp.factory("CommentsService", function (Comment) {
 
     commentsService.likeComment = function (commentid, user) {
         Comment.like({ id: commentid, user: user }, function (comment) {
-            for (var i in commentsService.data) {
-                if (commentsService.data[i]._id === comment._id) {
-                    commentsService.data[i] = comment;
+            for (var i in commentsService.comments) {
+                if (commentsService.comments[i]._id === comment._id) {
+                    commentsService.comments[i] = comment;
                 }
             }
         });
@@ -74,11 +75,19 @@ wfApp.factory("CommentsService", function (Comment) {
 });
 
 wfApp.factory("FishService", function (Fish) {
-    var fishService = { data: [] };
+    var fishService = {};
 
     fishService.requestFish = function (fishid) {
         Fish.get({ id: fishid }, function (fish) {
-            fishService.data = fish[0];
+            fishService.fish = fish;
+        });
+
+        return fishService;
+    };
+
+    fishService.searchFish = function (term) {
+        Fish.search({ term: term }, function (fishs) {
+            fishService.fishs = fishs;
         });
 
         return fishService;

@@ -184,9 +184,6 @@ wfApp.directive('wfComment', (CommentsService) => {
             user: '='
         },
         link: (scope, element) => {
-
-            console.log(scope.user, scope.user.login, scope.comment.likes, scope.comment.likes.indexOf(scope.user.login) !== -1);
-
             scope.data = {
                 likes: scope.comment.likes.length,
                 already_like: scope.comment.likes.indexOf(scope.user.login) !== -1

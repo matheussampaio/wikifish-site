@@ -8,18 +8,12 @@ wfApp.controller("wfFishDetailCtrl", function ($scope, $routeParams, FishService
     var fishid = decodeURIComponent($routeParams.id);
     $scope.vm = {};
 
-    $scope.vm.fish = FishService.requestFish(fishid);
-    $scope.vm.comments = CommentsService.requestComments(fishid);
-
-    console.log("scope", $scope.user);
+    $scope.vm.fishService = FishService.requestFish(fishid);
+    $scope.vm.commentsService = CommentsService.requestComments(fishid);
 });
 
-wfApp.controller("wfSearchCtrl", function ($scope, $routeParams, Fish) {
-    $scope.vm = {
-        fishs: []
-    };
+wfApp.controller("wfSearchCtrl", function ($scope, $routeParams, FishService) {
+    $scope.vm = {};
 
-    Fish.search({ term: decodeURIComponent($routeParams.term) }, function (data) {
-        $scope.vm.fishs = data;
-    });
+    $scope.vm.fishService = FishService.searchFish(decodeURIComponent($routeParams.term));
 });
