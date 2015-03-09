@@ -10,6 +10,7 @@ var express = require('express'),
     index = require('./routes/index'),
     api = require('./routes/api'),
     http = require('http'),
+    session = require('express-session'),
     path = require('path');
 
 var app = module.exports = express();
@@ -53,7 +54,6 @@ app.use(methodOverride());
 app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use('/node_modules', express.static(__dirname + '/node_modules'));
 
-var session = require('express-session');
 app.use(session({secret: 'mysecret', resave: false, saveUninitialized: false}));
 
 var env = process.env.NODE_ENV || 'development';
