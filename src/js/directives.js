@@ -66,7 +66,9 @@ wfApp.directive('wfSearch', ($location) => {
         template: `
             <form class='form-horizontal' role='form' name='searchFish' >
                 <div class='form-group'>
-                    <input class='form-control' type='text' ng-model='wf_search_term'/>
+                    <div class='text-center'>
+                        <input class='form-control wf-search-input' type='text' ng-model='wf_search_term'/>
+                    </div>
                 </div>
                 <div class='form-group'>
                     <div class='text-center'>
@@ -143,16 +145,6 @@ wfApp.directive('wfLoading', () => {
     }
 });
 
-wfApp.directive('wfFishComments', () => {
-    return {
-        restrict: 'E',
-        templateUrl: 'partials/wfFishComment',
-        scope: {
-            comment: '='
-        }
-    }
-});
-
 wfApp.directive('wfFishNewComment', (Comment, CommentsService) => {
     return {
         restrict: 'E',
@@ -167,7 +159,8 @@ wfApp.directive('wfFishNewComment', (Comment, CommentsService) => {
                 var newComment = {
                     parent: scope.fish._id,
                     text: scope.text,
-                    user: scope.user.login
+                    user: scope.user.login,
+                    likes: [scope.user.login]
                 };
 
                 CommentsService.saveComment(newComment).
@@ -178,6 +171,40 @@ wfApp.directive('wfFishNewComment', (Comment, CommentsService) => {
                     });
 
             };
+        }
+    }
+});
+
+wfApp.directive('wfComment', (CommentsService) => {
+    return {
+        restrict: 'E',
+        templateUrl: 'partials/wfComment',
+        scope: {
+            comment: '=',
+            user: '='
+        },
+        link: (scope, element) => {
+
+            console.log(scope.user, scope.user.login, scope.comment.likes, scope.comment.likes.indexOf(scope.user.login) !== -1);
+
+            scope.data = {
+                likes: scope.comment.likes.length,
+                already_like: scope.comment.likes.indexOf(scope.user.login) !== -1
+            };
+
+            var btnLike = element.find('#like');
+
+            btnLike.on('mouseenter', function() {
+                scope.data.likes = '+1';
+                scope.$apply();
+            });
+
+            btnLike.on('mouseleave', function() {
+                scope.data.likes = scope.comment.likes.length;
+                scope.$apply();
+            });
+
+            scope.likeComment = CommentsService.likeComment;
         }
     }
 });

@@ -25,11 +25,15 @@ wfApp.factory("Comment", ($resource) => {
     return $resource('/api/comment/:id', {}, {
         fish: {
             method: 'GET',
-            url : '/api/comment?parent=:fish',
+            url: '/api/comment?parent=:fish',
             isArray: true
         },
         get: {
             isArray: true
+        },
+        like: {
+            method: 'GET',
+            url: '/api/comment/:id/like?user=:user'
         }
     });
 });
@@ -57,6 +61,16 @@ wfApp.factory("CommentsService", (Comment) => {
             }, (error) => {
                 return error;
             } );
+    };
+
+    commentsService.likeComment = (commentid, user) => {
+        Comment.like({'id': commentid, 'user': user}, (comment) => {
+            for (var i in commentsService.data) {
+                if (commentsService.data[i]._id === comment._id) {
+                    commentsService.data[i] = comment;
+                }
+            }
+        });
     };
 
     return commentsService;

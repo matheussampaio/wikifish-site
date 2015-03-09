@@ -2,4 +2,4 @@
    .form-group
       textarea.form-control(name='text', type='text', ng-model='text', rows="3", placeholder='Comentário', required)
    .form-group
-      button.btn.btn-default(type='submit', ng-click='sendComment()', ng-disabled='!text') Enviar
+      button.btn.btn-default(type='submit', ng-click='sendComment()', ng-disabled='!text', ng-class='{"btn-primary": text}') Enviar

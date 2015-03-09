@@ -10,6 +10,8 @@ wfApp.controller("wfFishDetailCtrl", ($scope, $routeParams, FishService, Comment
 
     $scope.vm.fish = FishService.requestFish(fishid);
     $scope.vm.comments = CommentsService.requestComments(fishid);
+
+    console.log('scope', $scope.user);
 });
 
 wfApp.controller("wfSearchCtrl", ($scope, $routeParams, Fish) => {

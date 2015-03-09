@@ -10,8 +10,16 @@
 .wf-big-logo {
   @extend .wf-logo;
   font-size: $font-size-h1 * 3;
+  margin-top: $spacing-unit * 2;
 }
 
+.wf-search-input {
+  width: $spacing-unit * 15 !important;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: $spacing-unit;
+  margin-bottom: $spacing-unit / 2;
+}
 .wf-fish-thumbnail {
   display: inline-block;
   padding: $spacing-unit / 4;
@@ -72,4 +80,29 @@ button.wf-btn-social {
   float: none;
   width: 328px;
   height: 46px;
+}
+
+.wf-fish-comments {
+
+  .wf-comment-user {
+    font-weight: bold;
+  }
+
+  .wf-comment-likes {
+    width: 40px;
+  }
+
+  ul.wf-comment-info {
+      padding-left: 0px;
+      margin-bottom: $spacing-unit / 2;
+
+      li {
+        display: inline-block;
+        margin-right: 8px;
+      }
+  }
+
+  .wf-comment-text {
+    margin-left: $spacing-unit;
+  }
 }

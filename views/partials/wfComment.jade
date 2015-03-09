@@ -1,0 +1,9 @@
+ul.wf-comment-info
+   li.btn.btn-default.wf-comment-likes#like(ng-click='likeComment(comment._id, user.login)',
+   ng-disabled='data.already_like || !user.authenticated',
+   ng-class='{"btn-success": data.already_like }') {{data.likes}}
+   li.wf-comment-user {{comment.user}}
+   li.wf-comment-updated {{comment.updated | date:'dd/MM/yyyy HH:mm'}}
+
+.container
+   .wf-comment-text {{comment.text}}

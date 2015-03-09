@@ -22,11 +22,9 @@ wf-site
 
       wf-fish-new-comment(user='user', fish='vm.fish.data')
 
-      .wf-fish-comments
-         .wf-fish-comment(ng-repeat='comment in vm.comments.data')
-            .wf-comment-info
-               .wf-comment-user {{comment.user}}
-               .wf-comment-score {{comment.score}}
-               .wf-comment-updated {{comment.updated | date:'dd/MM/yyyy HH:mm'}}
+      .wf-fish-comments.panel.panel-default(ng-show='vm.comments')
+         .panel-heading Comentários
 
-               p {{comment.text}}
+         ul.list-group
+            li.list-group-item.wf-fish-comment(ng-repeat='comment in vm.comments.data | orderBy:["-likes.length", "updated"]')
+               wf-comment(comment='comment', user='user')
