@@ -4,6 +4,7 @@ var del = require('del');
 var gulp = require('gulp');
 var babel = require('gulp-babel');
 var compass = require('gulp-compass');
+var minifyCSS= require('gulp-minify-css');
 
 var runSequence = require('run-sequence');
 
