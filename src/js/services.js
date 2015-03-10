@@ -9,13 +9,7 @@ var wfApp = angular.module('wfApp.services', ['ngResource']);
 
 
 wfApp.factory("Fish", ($resource) => {
-    return $resource('/api/fish/:id', {}, {
-        search: {
-            method: 'GET',
-            url : '/api/fish/search?term=:term',
-            isArray: true
-        }
-    });
+    return $resource('/api/fish/:id');
 });
 
 wfApp.factory("Comment", ($resource) => {
@@ -88,8 +82,8 @@ wfApp.factory('FishService', (Fish) => {
         return fishService;
     };
 
-    fishService.searchFish = (term) => {
-        Fish.search({'term': term}, (fishs) => {
+    fishService.searchFish = (query) => {
+        Fish.query(query, (fishs) => {
             fishService.fishs = fishs;
         });
 

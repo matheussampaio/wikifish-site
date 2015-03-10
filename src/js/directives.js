@@ -60,32 +60,51 @@ wfApp.directive('wfMenu', ($location) => {
     };
 });
 
+var talim;
 wfApp.directive('wfSearch', ($location) => {
     return {
         restrict: 'E',
-        template: `
-            <form class='form-horizontal' role='form' name='searchFish' >
-                <div class='form-group'>
-                    <div class='text-center'>
-                        <input class='form-control wf-search-input' type='text' ng-model='wf_search_term'/>
-                    </div>
-                </div>
-                <div class='form-group'>
-                    <div class='text-center'>
-                        <button class='btn btn-default' ng-click='submit()' ng-bind='button_text' />
-                    </div>
-                </div>
-            </form>`,
+        templateUrl: 'partials/wfSearch',
         scope: {
-            button_text: '@buttontext'
+            button_text: '@buttontext',
+            options: '='
         },
         link: (scope, elem) => {
-            scope.submit = () => {
-                $location.path('/search/' + encodeURIComponent(scope.wf_search_term));
-            }
+            elem.find('#search').focus();
 
-            elem.find('input').focus();
+            scope.submit = () => {
+                $location.path('/search');
+
+                var query = escapeOptions();
+
+                console.log(query);
+
+                $location.search(query);
+            };
+
+            var escapeOptions = () => {
+                var query = {};
+
+                scope.options.forEach((option) => {
+                    query[option.name] = convertArray(option.values);
+                });
+
+                query['usual_name__regex'] = scope.wf_search_term;
+
+                return query;
+            };
+
+            var convertArray = (array) => {
+                return array.filter(function (item) {
+                    return item.value;
+                }).map(function (item) {
+                    return item.enum;
+                }).join(',');
+            };
+
         }
+
+
     };
 });
 

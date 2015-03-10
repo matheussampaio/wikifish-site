@@ -1,0 +1,14 @@
+form.form-horizontal(role='form' name='searchFish')
+    .form-group
+        .text-center
+            input.form-control.wf-search-input#search(type='text' ng-model='wf_search_term')
+    .form-group
+        .text-center
+            button.btn.btn-default(ng-click='submit()' ng-bind='button_text')
+
+    .form-group(ng-repeat='option in options')
+        h5 {{option.title}}
+        .checkbox(ng-repeat='item in option.values')
+            label
+                input(type='checkbox', ng-model='item.value')
+                | {{item.title}}

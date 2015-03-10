@@ -20,20 +20,7 @@ var Fish = restful.model('fish', new mongoose.Schema({
         comments: [],
         region: String
     })).
-    methods(['get', 'post', 'put', 'delete']).
-    route('search', ['get'], function (req, res, next) {
-        console.log('search', req.param('term'));
-
-        var term = req.param('term');
-
-        Fish.find().or([{'usual_name': new RegExp(term, 'i')}, {'cientific_name': new RegExp(term, 'i')}]).exec(function (err, fishs) {
-            if (err) {
-                res.status(400).json(err);
-            } else {
-                res.status(200).json(fishs);
-            }
-        });
-    });
+    methods(['get', 'post', 'put', 'delete']);
 
 
 module.exports = Fish;
