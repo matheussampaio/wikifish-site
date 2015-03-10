@@ -43,20 +43,49 @@ wfApp.directive("wfMenu", function ($location) {
     };
 });
 
+var talim;
 wfApp.directive("wfSearch", function ($location) {
     return {
         restrict: "E",
-        template: "\n            <form class='form-horizontal' role='form' name='searchFish' >\n                <div class='form-group'>\n                    <div class='text-center'>\n                        <input class='form-control wf-search-input' type='text' ng-model='wf_search_term'/>\n                    </div>\n                </div>\n                <div class='form-group'>\n                    <div class='text-center'>\n                        <button class='btn btn-default' ng-click='submit()' ng-bind='button_text' />\n                    </div>\n                </div>\n            </form>",
+        templateUrl: "partials/wfSearch",
         scope: {
-            button_text: "@buttontext"
+            button_text: "@buttontext",
+            options: "="
         },
         link: function (scope, elem) {
+            elem.find("#search").focus();
+
             scope.submit = function () {
-                $location.path("/search/" + encodeURIComponent(scope.wf_search_term));
+                $location.path("/search");
+
+                var query = escapeOptions();
+
+                console.log(query);
+
+                $location.search(query);
             };
 
-            elem.find("input").focus();
+            var escapeOptions = function () {
+                var query = {};
+
+                scope.options.forEach(function (option) {
+                    query[option.name] = convertArray(option.values);
+                });
+
+                query.usual_name__regex = scope.wf_search_term;
+
+                return query;
+            };
+
+            var convertArray = function (array) {
+                return array.filter(function (item) {
+                    return item.value;
+                }).map(function (item) {
+                    return item["enum"];
+                }).join(",");
+            };
         }
+
     };
 });
 
@@ -151,8 +180,6 @@ wfApp.directive("wfComment", function (CommentsService) {
             user: "="
         },
         link: function (scope, element) {
-
-            console.log(scope.comment.likes, scope.user.login);
 
             scope.data = {
                 likes: scope.comment.likes.length,
