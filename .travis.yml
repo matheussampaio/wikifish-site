@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+- '0.12'
+before_install:
+- npm install -g gulp
+- rvm use 1.9.3
+- gem install bundler
+- bundle install
+script: gulp build
+deploy:
+  provider: heroku
+  api_key:
+    secure: LzCLLwxmqSpG2k79KcBcBPAEPllpJDNC/aY6bkrN66U21nZenHKQC01/IvKN4ErTKweV37YIF76ZTASj+XDxwc9S9Cow48mN53GE9Ol+jOo+fLFHW8Kp+CJPhNIzj7fON23NbMp6pqw7maz+jWw01H2m81/afEmdSfsV1P2yzC4=
+  skip_cleanup: true
+  buildpack: nodejs
+  app:
+    master: dev-wikifish
+    production: appwikifish
