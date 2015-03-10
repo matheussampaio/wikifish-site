@@ -10,3 +10,10 @@ before_install:
   - bundle install
 
 script: gulp build
+
+deploy:
+  provider: heroku
+  api_key: b132b5cf-a925-4052-b3cb-a726c3ed0415
+  skip_cleanup: true
+  app:
+      travis: dev-wikifish
