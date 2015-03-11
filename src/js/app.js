@@ -10,11 +10,16 @@ var wfApp = angular.module('wfApp', [
     'wfApp.filters',
     'wfApp.services',
     'wfApp.directives',
+
+    'wfApp.new.directives',
+    'wfApp.new.services',
+    'wfApp.new.factories',
+    'wfApp.new.controllers',
     'UserApp'
 ]);
 
 wfApp.config(($routeProvider, $locationProvider) => {
-    $routeProvider.when('/', {templateUrl: 'partials/index', controller: 'wfIndexCtrl', public: true});
+    $routeProvider.when('/', {templateUrl: 'partials/index', public: true});
 
     $routeProvider.when('/search', {templateUrl: 'partials/search', controller: 'wfSearchCtrl', public: true});
     $routeProvider.when('/fish/:id', {templateUrl: 'partials/fish_detail', controller: 'wfFishDetailCtrl', public: true});

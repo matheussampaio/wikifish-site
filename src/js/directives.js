@@ -60,54 +60,6 @@ wfApp.directive('wfMenu', ($location) => {
     };
 });
 
-var talim;
-wfApp.directive('wfSearch', ($location) => {
-    return {
-        restrict: 'E',
-        templateUrl: 'partials/wfSearch',
-        scope: {
-            button_text: '@buttontext',
-            options: '='
-        },
-        link: (scope, elem) => {
-            elem.find('#search').focus();
-
-            scope.submit = () => {
-                $location.path('/search');
-
-                var query = escapeOptions();
-
-                console.log(query);
-
-                $location.search(query);
-            };
-
-            var escapeOptions = () => {
-                var query = {};
-
-                scope.options.forEach((option) => {
-                    query[option.name] = convertArray(option.values);
-                });
-
-                query['usual_name__regex'] = scope.wf_search_term;
-
-                return query;
-            };
-
-            var convertArray = (array) => {
-                return array.filter(function (item) {
-                    return item.value;
-                }).map(function (item) {
-                    return item.enum;
-                }).join(',');
-            };
-
-        }
-
-
-    };
-});
-
 wfApp.directive('wfFishThumbnail', ($location) => {
     return {
         restrict: 'E',

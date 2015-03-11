@@ -5,8 +5,18 @@ block body
     div(ng-view)
 
     script(src='public/js/app.js')
+
+    // Old style:
     script(src='public/js/services.js')
     script(src='public/js/controllers.js')
     script(src='public/js/factories.js')
-    script(src='public/js/filters.js')
     script(src='public/js/directives.js')
+
+
+    // New Style:
+    script(src='public/js/filters.module.js')
+    script(src='public/js/factories.module.js')
+    script(src='public/js/controllers.module.js')
+    script(src='public/js/services.module.js')
+    script(src='public/js/directives.module.js')
+    script(src='public/js/search.directive.js')
