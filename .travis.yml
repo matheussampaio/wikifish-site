@@ -10,7 +10,7 @@ script: gulp build
 deploy:
   provider: heroku
   api_key:
-    secure: V0/WcXnskrHv/S9pclL+AUDXe4Q5jJLUyuBcBATWpgcp/ooLgEgyMuTNQC2mkYhd8/iJy3NmK1ERpWA8BwvIxdCecWBtUItqRiDsHcOaK1LDLxjjp1pFExstC82sxKmkLfzT2DDALSLzUs6p3CPzEJLPAiWxGsa+cOWVXdo/qMM=
+      secure: "QmzijnUNQ+GJWonxoA4zjCBE+GFeWqPDESjsZbtuvmkGUg3fyl3Q9lynAjRJYX5iHthy8Tc3mgEAGt7q3JN/RkagGwmLMTg5H484p3Af2b7pOGs+qxAzcaK8U4W7mgm1HY1pFS5MQJ1ipXFs0MwiLDFqk3+vaOaH4rw1Z+z7rFI="
   skip_cleanup: true
   buildpack: nodejs
   app:
