@@ -2,6 +2,8 @@
   "name": "wikifish-site",
   "version": "0.0.1",
   "private": true,
+  "main": "server.js",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.9.2",
     "errorhandler": "^1.2.2",
