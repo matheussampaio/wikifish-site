@@ -45,12 +45,12 @@
                 query[option.name] = convertArray(option.values);
             });
 
-            query['usual_name__regex'] = vm.search;
+            query['usual_name__regex'] = vm.search.toLowerCase();
 
             return query;
         }
 
-       function convertArray(array) {
+        function convertArray(array) {
             return array.filter(function (item) {
                 return item.value;
             }).map(function (item) {

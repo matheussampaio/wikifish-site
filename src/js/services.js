@@ -7,11 +7,6 @@
 // In this case it is a simple value service.
 var wfApp = angular.module('wfApp.services', ['ngResource']);
 
-
-wfApp.factory("Fish", ($resource) => {
-    return $resource('/api/fish/:id');
-});
-
 wfApp.factory("Comment", ($resource) => {
     return $resource('/api/comment/:id', {}, {
         fish: {
@@ -69,26 +64,4 @@ wfApp.factory("CommentsService", (Comment) => {
     };
 
     return commentsService;
-});
-
-wfApp.factory('FishService', (Fish) => {
-    var fishService = {};
-
-    fishService.requestFish = (fishid) => {
-        Fish.get({'id':  fishid}, (fish) => {
-            fishService.fish = fish;
-        });
-
-        return fishService;
-    };
-
-    fishService.searchFish = (query) => {
-        Fish.query(query, (fishs) => {
-            fishService.fishs = fishs;
-        });
-
-        return fishService;
-    };
-
-    return fishService;
 });

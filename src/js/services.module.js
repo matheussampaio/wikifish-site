@@ -3,6 +3,6 @@
 
     angular
         .module('wfApp.new.services', [
-            'wfSearchInput'
+            'Fish'
         ]);
 })();
