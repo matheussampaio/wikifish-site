@@ -3,6 +3,7 @@
 
     angular
         .module('wfApp.new.services', [
-            'Fish'
+            'Fish',
+            'Comment'
         ]);
 })();

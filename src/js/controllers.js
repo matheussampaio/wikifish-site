@@ -5,15 +5,18 @@
 var wfApp = angular.module("wfApp.controllers", []);
 
 
-wfApp.controller("wfFishDetailCtrl", ($scope, $routeParams, Fish, CommentsService) => {
-    var fishid = decodeURIComponent($routeParams.id);
+wfApp.controller("wfFishDetailCtrl", ($scope, $routeParams, Fish, Comment) => {
+    var fishID = decodeURIComponent($routeParams.id);
+
     $scope.vm = {};
 
-    $scope.vm.fish = Fish.getFishByID(fishid).then((fish) => {
+    $scope.vm.fish = Fish.getFishByID(fishID).then((fish) => {
         $scope.vm.fish = fish;
     });
 
-    $scope.vm.commentsService = CommentsService.requestComments(fishid);
+    Comment.getCommentsByFishID(fishID).then((comments) => {
+        $scope.vm.comments = comments;
+    });
 });
 
 wfApp.controller("wfSearchCtrl", ($scope, $location, Fish) => {

@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('wfApp.filters', [
+        .module('wfApp.new.filters', [
 
         ]);
 })();

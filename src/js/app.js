@@ -4,13 +4,14 @@
 
 var wfApp = angular.module('wfApp', [
     'ngRoute',
+    'ngResource',
     'angular.filter',
+    
     'wfApp.controllers',
     'wfApp.factories',
-    'wfApp.filters',
-    'wfApp.services',
     'wfApp.directives',
 
+    'wfApp.new.filters',
     'wfApp.new.directives',
     'wfApp.new.services',
     'wfApp.new.factories',

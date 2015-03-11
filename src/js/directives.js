@@ -116,7 +116,7 @@ wfApp.directive('wfLoading', () => {
     }
 });
 
-wfApp.directive('wfFishNewComment', (Comment, CommentsService) => {
+wfApp.directive('wfFishNewComment', (Comment) => {
     return {
         restrict: 'E',
         templateUrl: 'partials/wfFishNewComment',
@@ -134,15 +134,12 @@ wfApp.directive('wfFishNewComment', (Comment, CommentsService) => {
                     likes: [scope.user.login]
                 };
 
-                CommentsService.saveComment(newComment).
-                    then((data) => {
+                Comment.addComment(newComment)
+                    .then((data) => {
                         scope.text = '';
-                    }, (error) => {
-                        console.error('Houve algum error', data);
                     });
 
             };
-
 
             if (scope.user.authenticated) {
                 scope.placeholder = 'Deixe um comentário...';
@@ -153,7 +150,7 @@ wfApp.directive('wfFishNewComment', (Comment, CommentsService) => {
     }
 });
 
-wfApp.directive('wfComment', (CommentsService) => {
+wfApp.directive('wfComment', (Comment) => {
     return {
         restrict: 'E',
         templateUrl: 'partials/wfComment',
@@ -180,7 +177,7 @@ wfApp.directive('wfComment', (CommentsService) => {
                 scope.$apply();
             });
 
-            scope.likeComment = CommentsService.likeComment;
+            //scope.likeComment = CommentsService.likeComment;
         }
     }
 });
