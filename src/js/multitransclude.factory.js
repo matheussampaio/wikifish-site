@@ -1,10 +1,20 @@
-'use strict';
+(function () {
+    'use strict';
 
-var wfApp = angular.module('wfApp.factories', []);
+    angular
+        .module('MultiTransclude', [])
+        .factory('MultiTransclude', MultiTransclude);
 
-wfApp.factory("MultiTransclude", () => {
-    return {
-        transclude: (elem, transcludeFn) => {
+    function MultiTransclude() {
+        var service = {
+            transclude: transclude
+        };
+
+        return service;
+
+        ////////////////
+
+        function transclude(elem, transcludeFn) {
             transcludeFn((clone) => {
 
                 angular.forEach(clone, (cloneEl) => {
@@ -27,4 +37,4 @@ wfApp.factory("MultiTransclude", () => {
             });
         }
     }
-});
+})();

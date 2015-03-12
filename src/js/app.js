@@ -6,9 +6,8 @@ var wfApp = angular.module('wfApp', [
     'ngRoute',
     'ngResource',
     'angular.filter',
-    
+
     'wfApp.controllers',
-    'wfApp.factories',
     'wfApp.directives',
 
     'wfApp.new.filters',

@@ -3,5 +3,6 @@
 
     angular
         .module('wfApp.new.factories', [
+            'MultiTransclude'
         ]);
 })();
