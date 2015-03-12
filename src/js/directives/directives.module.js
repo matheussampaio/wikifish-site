@@ -3,6 +3,8 @@
 
     angular
         .module('wfApp.new.directives', [
-            'wfSearchInput'
+            'wfSearchInput',
+            'wfNavbar',
+            'Site'
         ]);
 })();

@@ -4,37 +4,6 @@
 
 var wfApp = angular.module('wfApp.directives', []);
 
-wfApp.directive('wfSite', (MultiTransclude) => {
-    return {
-        scope: {},
-        transclude: true,
-        template: `
-            <div>
-                <header transclude-id='site-head'></header>
-                <nav transclude-id='site-menu'></nav>
-                <main transclude-id='site-body'></main>
-                <wf-footer></wf-footer>
-            </div>`,
-        link: (scope, iElem, iAttrs, ctrl, transclude) => {
-            MultiTransclude.transclude(iElem, transclude);
-        }
-    };
-});
-
-wfApp.directive('wfNavbar', ($location) => {
-    return {
-        scope: true,
-        templateUrl: 'partials/wfNavbar',
-        link: (scope) => {
-            scope.items = [
-                {title: 'Home', url: '/'}
-            ];
-
-            scope.active = $location.path();
-        }
-    };
-});
-
 wfApp.directive('wfMenu', ($location) => {
     return {
         template: `
@@ -81,18 +50,6 @@ wfApp.directive('wfFishThumbnail', ($location) => {
             }
         }
     }
-});
-
-wfApp.directive('wfBigLogo', () => {
-    return {
-        template: '<h1 class="wf-big-logo text-center">WikiFish</h1>'
-    }
-});
-
-wfApp.directive('wfFooter', () => {
-    return {
-        template: '<footer></footer>'
-    };
 });
 
 wfApp.directive('wfLoading', () => {

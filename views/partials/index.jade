@@ -1,5 +1,5 @@
 wf-site
-    wf-navbar(transclude-to='site-head')
+    wf-navbar(transclude-to='site-head', user='user')
     .container(transclude-to='site-body')
-        wf-big-logo
+        h1.wf-big-logo.text-center WikiFish
         wf-search-input(buttontext='Pesquisar')

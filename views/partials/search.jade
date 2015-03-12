@@ -1,5 +1,5 @@
 wf-site
-    wf-navbar(transclude-to='site-head')
+    wf-navbar(transclude-to='site-head', user='user')
     .container(transclude-to='site-body')
 
         div.wf-search-not-found.text-center(ng-show='vm.fishs.length === 0') Nenhum peixe encontrado.

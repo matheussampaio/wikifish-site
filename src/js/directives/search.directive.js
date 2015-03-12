@@ -11,6 +11,7 @@
             controller: SearchInputController,
             link: link,
             restrict: 'E',
+            scope: {},
             templateUrl: 'partials/wfSearch'
         };
         return directive;
