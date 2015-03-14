@@ -2,12 +2,11 @@
     'use strict';
 
     angular
-        .module('Fish', [])
+        .module('wfApp.services')
         .factory('Fish', Fish);
 
     Fish.$inject = ['$resource'];
 
-    /* @ngInject */
     function Fish($resource) {
         var service = {
             resource: $resource('/api/fish/:id'),

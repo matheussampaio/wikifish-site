@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('wfSearchInput', [])
+        .module('wfApp.new.directives')
         .directive('wfSearchInput', wfSearchInput);
 
     function wfSearchInput() {

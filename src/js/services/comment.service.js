@@ -2,12 +2,11 @@
     'use strict';
 
     angular
-        .module('Comment', [])
+        .module('wfApp.services')
         .factory('Comment', Comment);
 
     Comment.$inject = ['$resource'];
 
-    /* @ngInject */
     function Comment($resource) {
         var service = {
             resource: getResource(),

@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('Site', [])
+        .module('wfApp.new.directives')
         .directive('Site', Site);
 
     Site.$inject = ['MultiTransclude'];

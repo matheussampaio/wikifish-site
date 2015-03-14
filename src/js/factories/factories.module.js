@@ -2,7 +2,5 @@
     'use strict';
 
     angular
-        .module('wfApp.new.factories', [
-            'MultiTransclude'
-        ]);
+        .module('wfApp.factories', []);
 })();

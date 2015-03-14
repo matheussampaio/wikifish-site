@@ -2,8 +2,5 @@
     'use strict';
 
     angular
-        .module('wfApp.new.services', [
-            'Fish',
-            'Comment'
-        ]);
+        .module('wfApp.services', []);
 })();
