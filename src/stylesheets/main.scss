@@ -111,3 +111,18 @@ button.wf-btn-social {
   font-size: $spacing-unit * 1.5;
   margin-top: $spacing-unit * 3;
 }
+
+.wf-option-group {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: $spacing-unit;
+}
+
+.wf-option-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.wf-options {
+  margin-top: $spacing-unit * 1.5;
+}

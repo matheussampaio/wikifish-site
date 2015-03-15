@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('wfApp.new.directives')
+        .module('wfApp.directives')
         .directive('wfNavbar', Navbar);
 
     function Navbar() {

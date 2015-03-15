@@ -1,14 +1,13 @@
-form.form-horizontal(role='form' name='searchFish')
-   .form-group
-      .text-center
-         input.form-control.wf-search-input#search(type='text' ng-model='vm.search')
-   .form-group
-      .text-center
-         button.btn.btn-default(ng-click='vm.submit()') Pesquisar
+.text-center
+    input.form-control.wf-search-input#search(type='text' ng-model='vm.search')
+.text-center
+    button.btn.btn-default(ng-click='vm.submit()') Pesquisar
 
-   .form-group(ng-repeat='option in vm.options')
-      h5 {{option.title}}
-      .checkbox(ng-repeat='item in option.values')
-         label
-            input(type='checkbox', ng-model='item.value')
-            | {{item.title}}
+div.wf-options
+    div(ng-repeat='option in vm.options').wf-option-group
+        h5.wf-option-title {{option.title}}
+
+        div.checkbox(ng-repeat='item in option.values')
+            label.wf-option-checkbox
+                input.wf-option-input(type='checkbox', ng-model='item.value')
+                | {{item.title}}

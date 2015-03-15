@@ -2,5 +2,5 @@
     'use strict';
 
     angular
-        .module('wfApp.new.directives', []);
+        .module('wfApp.directives', []);
 })();

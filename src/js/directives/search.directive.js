@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('wfApp.new.directives')
+        .module('wfApp.directives')
         .directive('wfSearchInput', wfSearchInput);
 
     function wfSearchInput() {
@@ -78,6 +78,43 @@
                         {title: 'Egglayer', enum: 'EGGYLAYER', value: true},
                         {title: 'Livebearer', enum: 'LIVEBEARER', value: true},
                         {title: 'Mouthbrooder', enum: 'MOUTHBROODER', value: true}
+                    ]
+                },
+                {
+                    name: '"aquarium_setup__in',
+                    title: 'Configuração do Aquário',
+                    values: [
+                        {title: 'Aquário com plantas densas', enum: 'DENSELY_PLANTED', value: true},
+                        {title: 'Pedras; Sem plantas', enum: 'ONLY_ROCKS', value: true},
+                        {title: 'Só cascalho no fundo', enum: 'GRAVEL_BOTTOM', value: true},
+                        {title: 'Pedras, Plantas e Madeiras', enum: 'ROCKS_PLANTS_DRIFTWOOD', value: true}
+                    ]
+                },
+                {
+                    name: 'swimming__in',
+                    title: 'Hábitos de Natação',
+                    values: [
+                        {title: 'Baixo', enum: 'BOTTOM', value: true},
+                        {title: 'Cima', enum: 'TOP', value: true},
+                        {title: 'Meio', enum: 'MIDDLE', value: true},
+                        {title: 'Nada em especial', enum: 'NONE', value: true}
+                    ]
+                },
+                {
+                    name: 'light__in',
+                    title: 'Iluminação do Aquário',
+                    values: [
+                        {title: 'Claro. Com luz do Sol', enum: 'BRIGHT_WITH_SUNLIGHT', value: true},
+                        {title: 'Claro. Nenhuma luz do Sol', enum: 'BRIGHT_NO_SUNLIGHT', value: true},
+                        {title: 'Mais escuro possível', enum: 'DARK', value: true}
+                    ]
+                },
+                {
+                    name: 'temperament__in',
+                    title: 'Temperamento',
+                    values: [
+                        {title: 'Pacífico', enum: 'PEACEFUL', value: true},
+                        {title: 'Perigoso', enum: 'DANGER', value: true}
                     ]
                 }
             ];

@@ -2,5 +2,5 @@
     'use strict';
 
     angular
-        .module('wfApp.new.controllers', []);
+        .module('wfApp.controllers', []);
 })();

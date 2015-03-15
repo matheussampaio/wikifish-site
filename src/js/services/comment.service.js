@@ -3,11 +3,11 @@
 
     angular
         .module('wfApp.services')
-        .factory('Comment', Comment);
+        .factory('Comment', CommentService);
 
-    Comment.$inject = ['$resource'];
+    CommentService.$inject = ['$resource'];
 
-    function Comment($resource) {
+    function CommentService($resource) {
         var service = {
             resource: getResource(),
             getCommentsByFishID: getCommentsByFishID,

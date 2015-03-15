@@ -14,14 +14,14 @@
         });
 
         $routeProvider.when('/search', {
-            templateUrl: 'partials/search',
-            controller: 'wfSearchCtrl',
+            templateUrl: 'partials/searchResult',
+            controller: 'wfSearchResultController',
             public: true
         });
 
         $routeProvider.when('/fish/:id', {
             templateUrl: 'partials/fish_detail',
-            controller: 'wfFishDetailCtrl',
+            controller: 'wfFishDetailController',
             public: true
         });
 
