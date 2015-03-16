@@ -138,3 +138,16 @@ button.wf-btn-social {
     @include responsive-attrs(margin, ($spacing-unit/4) auto ($spacing-unit/4) auto, ($spacing-unit/3) auto ($spacing-unit/3) auto, ($spacing-unit/2) auto ($spacing-unit/2) auto, $spacing-unit auto $spacing-unit auto);
   }
 }
+
+.navbar-brand {
+  line-height:12px;
+  padding-top:20px;
+  padding-bottom:5px;
+}
+
+.navbar-brand small {
+  display: block;
+  font-size: 10px;
+  text-align: center;
+  padding-top: 4px;
+}

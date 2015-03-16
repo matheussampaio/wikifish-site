@@ -3,7 +3,8 @@
 
     angular.module('wfApp')
         .config(config)
-        .run(userapp);
+        .run(userapp)
+        .constant('version', 'GULP_APP_VERSION');
 
     config.$inject = ['$routeProvider', '$locationProvider'];
 

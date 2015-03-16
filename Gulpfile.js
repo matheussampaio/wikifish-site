@@ -1,4 +1,6 @@
-var path = require('path');
+var fs = require('fs');
+var version = 'v' + JSON.parse(fs.readFileSync('package.json', 'utf8')).version;
+
 var del = require('del');
 
 var gulp = require('gulp');
@@ -12,6 +14,7 @@ var babel = require('gulp-babel');
 var jshint = require('gulp-jshint');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var replace = require('gulp-replace');
 var compass = require('gulp-compass');
 var nodemon = require('gulp-nodemon');
 var plumber = require('gulp-plumber');
@@ -26,7 +29,7 @@ var templateCache = require('gulp-angular-templatecache');
 /* VARIABLES */
 /* ========= */
 
-var distJS = 'public'
+var distJS = 'public';
 var srcJS = [
     'src/**/app.module.js',
     'src/**/app.config.js',
@@ -34,7 +37,6 @@ var srcJS = [
     'src/**/*.js'
 ];
 
-var distCSS = 'public/stylesheets';
 var srcCSS = [
     'src/**/*.scss'
 ];
@@ -43,8 +45,6 @@ var distJade = 'public/templates';
 var srcJade = [
     'views/**/*.jade'
 ];
-
-
 
 
 /* ================== */
@@ -119,6 +119,7 @@ gulp.task('build:js', function() {
                 console.log(error.message);
                 this.emit('end');
         }}))
+        .pipe(replace(/GULP_APP_VERSION/g, version))
         .pipe(jshint())
         .pipe(jshint.reporter(stylish))
         .pipe(babel())
@@ -129,8 +130,6 @@ gulp.task('build:js', function() {
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(distJS));
 });
-
-
 
 gulp.task('build:templates', ['build:jade'], function () {
     gulp.src(distJade + '/**/*.html')
@@ -143,10 +142,8 @@ gulp.task('build:jade', function() {
         .pipe(jade({
             pretty: true
         }))
-        .pipe(gulp.dest(distJade))
+        .pipe(gulp.dest(distJade));
 });
-
-
 gulp.task('build:clean', function(cb) {
     del([
         'public/**'

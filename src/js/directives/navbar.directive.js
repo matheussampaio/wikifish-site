@@ -18,12 +18,13 @@
         return directive;
     }
 
-    NavbarController.$inject = ['$location'];
+    NavbarController.$inject = ['$location', 'version'];
 
-    function NavbarController($location) {
+    function NavbarController($location, version) {
         var vm = this;
         vm.items = getItems();
         vm.active = $location.path();
+        vm.version = version;
 
         ////////////////
 

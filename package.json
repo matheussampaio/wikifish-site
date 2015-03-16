@@ -1,6 +1,6 @@
 {
   "name": "wikifish-site",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
   "main": "server.js",
   "license": "MIT",
@@ -33,6 +33,7 @@
     "gulp-ng-annotate": "^0.5.2",
     "gulp-nodemon": "^1.0.5",
     "gulp-plumber": "^1.0.0",
+    "gulp-replace": "^0.5.3",
     "gulp-sourcemaps": "^1.5.0",
     "gulp-uglify": "^1.1.0",
     "jshint-stylish": "^1.0.1",

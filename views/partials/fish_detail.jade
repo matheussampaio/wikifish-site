@@ -6,19 +6,19 @@ wf-site
             img.wf-fish-icon(ng-src='{{vm.fish.url_picture}}', wf-loading)
 
          .wf-fish-infos
-            p(ng-show='vm.fish.usual_name') Nome Usual: {{vm.fishService.fish.usual_name | ucfirst}}
-            p(ng-show='vm.fish.cientific_name') Nome Cientifico: {{vm.fishService.fish.cientific_name | ucfirst}}
-            p(ng-show='vm.fish.ph') PH: {{vm.fishService.fish.ph}}
-            p(ng-show='vm.fish.dh') DH: {{vm.fishService.fish.dh}}
-            p(ng-show='vm.fish.temperature') Temperatura: {{vm.fishService.fish.dh}}
-            p(ng-show='vm.fish.maximum_length') Tamanho Máximo: {{vm.fishService.fish.maximum_length}}cm
-            p(ng-show='vm.fish.aquarium_liters') Tamanho Aquario: {{vm.fishService.fish.aquarium_liters}} L
-            p(ng-show='vm.fish.aquarium_setup') Configuração do Aquario: {{vm.fishService.fish.aquarium_setup}}
-            p(ng-show='vm.fish.alimentation') Alimentação: {{vm.fishService.fish.alimentation}}
-            p(ng-show='vm.fish.reproduction') Reprodução: {{vm.fishService.fish.reproduction}}
-            p(ng-show='vm.fish.temperament') Temperamento: {{vm.fishService.fish.temperament}}
-            p(ng-show='vm.fish.swimming') Swimming: {{vm.fishService.fish.swimming}}
-            p(ng-show='vm.fish.region') Região: {{vm.fishService.fish.region}}
+            p(ng-show='vm.fish.usual_name') Nome Usual: {{vm.fish.usual_name | ucfirst}}
+            p(ng-show='vm.fish.cientific_name') Nome Cientifico: {{vm.fish.cientific_name | ucfirst}}
+            p(ng-show='vm.fish.ph') PH: {{vm.fish.ph}}
+            p(ng-show='vm.fish.dh') DH: {{vm.fish.dh}}
+            p(ng-show='vm.fish.temperature') Temperatura: {{vm.fish.dh}}
+            p(ng-show='vm.fish.maximum_length') Tamanho Máximo: {{vm.fish.maximum_length}}cm
+            p(ng-show='vm.fish.aquarium_liters') Tamanho Aquario: {{vm.fish.aquarium_liters}} L
+            p(ng-show='vm.fish.aquarium_setup') Configuração do Aquario: {{vm.fish.aquarium_setup}}
+            p(ng-show='vm.fish.alimentation') Alimentação: {{vm.fish.alimentation}}
+            p(ng-show='vm.fish.reproduction') Reprodução: {{vm.fish.reproduction}}
+            p(ng-show='vm.fish.temperament') Temperamento: {{vm.fish.temperament}}
+            p(ng-show='vm.fish.swimming') Swimming: {{vm.fish.swimming}}
+            p(ng-show='vm.fish.region') Região: {{vm.fish.region}}
 
       wf-fish-new-comment(user='user', fish='vm.fish')
 
