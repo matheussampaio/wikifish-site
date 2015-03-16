@@ -9,17 +9,10 @@
 
 .wf-big-logo {
   @extend .wf-logo;
-  font-size: $font-size-h1 * 3;
-  margin-top: $spacing-unit * 2;
+  @include responsive-attrs(font-size, $font-size-h1 * 1.5, $font-size-h1 * 2, $font-size-h1 * 2, $font-size-h1 * 3);
+  @include responsive-attrs(margin-top, $spacing-unit / 2, $spacing-unit, $spacing-unit * 2, $spacing-unit * 3);
 }
 
-.wf-search-input {
-  width: $spacing-unit * 15 !important;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: $spacing-unit;
-  margin-bottom: $spacing-unit / 2;
-}
 .wf-fish-thumbnail {
   display: inline-block;
   padding: $spacing-unit / 4;
@@ -112,17 +105,36 @@ button.wf-btn-social {
   margin-top: $spacing-unit * 3;
 }
 
-.wf-option-group {
-  display: inline-block;
-  vertical-align: top;
-  margin-right: $spacing-unit;
-}
+.wf-search {
 
-.wf-option-title {
-  font-size: 18px;
-  font-weight: 600;
-}
+  .wf-option-group {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: $spacing-unit;
+  }
 
-.wf-options {
-  margin-top: $spacing-unit * 1.5;
+  .wf-option-title {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .wf-options {
+    @include responsive-attrs(margin-top, $spacing-unit / 2, $spacing-unit, $spacing-unit * 2, $spacing-unit * 3);
+  }
+
+  .margin-top {
+    @include responsive-attrs(margin-top, $spacing-unit / 2, $spacing-unit, $spacing-unit * 2, $spacing-unit * 3);
+  }
+
+  a {
+    color: $text-color !important;
+  }
+
+  button {
+    margin-right: $spacing-unit / 5;
+  }
+
+  .wf-search-input {
+    @include responsive-attrs(margin, ($spacing-unit/4) auto ($spacing-unit/4) auto, ($spacing-unit/3) auto ($spacing-unit/3) auto, ($spacing-unit/2) auto ($spacing-unit/2) auto, $spacing-unit auto $spacing-unit auto);
+  }
 }

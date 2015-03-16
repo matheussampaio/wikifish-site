@@ -20,7 +20,6 @@ $font-family-base: 'Lato', sans-serif;
 /* Buttons Bootstrap */
 $btn-default-bg: #566;
 $btn-default-color: $text-color;
-$btn-default-border: $btn-default-bg;
 $btn-default-border: rgba(0, 0, 0, 0.1);
 
 /* Forms Bootstrap */
@@ -36,6 +35,8 @@ $navbar-default-link-color: $text-color;
 $navbar-default-link-color: $text-color;
 $navbar-default-link-active-color: $link-color;
 $navbar-default-link-hover-color: $link-color;
+$navbar-default-toggle-hover-bg: $btn-default-bg;
+$navbar-default-toggle-border-color: rgba(0, 0, 0, 0.1);
 
 /* Panels Bootstrap */
 $panel-bg: $forms-bg;
@@ -48,3 +49,29 @@ $list-group-bg: $forms-bg;
 $list-group-border: rgba(0, 0, 0, 0.1);
 $list-group-active-text-color: red;
 $list-group-disabled-color: blue;
+
+$small-devices: 768px;
+$medium-devices: 998px;
+$large-devices: 1200px;
+
+@mixin responsive-attrs($attr, $xs, $sm, $md, $lg) {
+  // Extra Small Screens
+  @media only screen and (max-width: #{$small-devices}) {
+    #{$attr}: $xs;
+  }
+
+  // Small Devices Screens
+  @media only screen and (min-width: #{$small-devices + 1}) and (max-width: #{$medium-devices}) {
+    #{$attr}: $sm;
+  }
+
+  // Medium Devices Screens
+  @media only screen and (min-width: #{$medium-devices + 1}) and (max-width: #{$large-devices}) {
+    #{$attr}: $md;
+  }
+
+  // Large Devices Screens
+  @media only screen and (min-width: #{$large-devices + 1}) {
+    #{$attr}: $lg;
+  }
+}

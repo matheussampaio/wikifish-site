@@ -1,18 +1,25 @@
 nav.navbar.navbar-default
-    .container
+    .container-fluid
         .navbar-header
+            button.btn.btn-default.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar-collapse')
+                span.sr-only Toggle navigation
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
             a.navbar-brand(href="/") Wikifish
 
-        ul.nav.navbar-nav
-            li(ng-repeat="item in vm.items", ng-class="{'active': item.url === vm.active}" )
-                a(ng-bind="item.title", ng-href="{{item.url}}")
 
-        ul.nav.navbar-nav.navbar-right
-            li(ng-hide="user.authenticated", ng-class="{'active': '/login' === vm.active}")
-                a(href="/login") Login
-            li(ng-hide="user.authenticated", ng-class="{'active': '/signup' === vm.active}")
-                a(href="/signup") Registrar
-            li(ng-show="user.authenticated", ng-class="{'active': '/profile' === vm.active}")
-                a(href="/profile") {{user.email}}
-            li(ng-show="user.authenticated")
-                a(href="#" ua-logout) Logout
+        .collapse.navbar-collapse#navbar-collapse
+            ul.nav.navbar-nav
+                li(ng-repeat="item in vm.items", ng-class="{'active': item.url === vm.active}" )
+                    a(ng-bind="item.title", ng-href="{{item.url}}")
+
+            ul.nav.navbar-nav.navbar-right
+                li(ng-hide="user.authenticated", ng-class="{'active': '/login' === vm.active}")
+                    a(href="/login") Login
+                li(ng-hide="user.authenticated", ng-class="{'active': '/signup' === vm.active}")
+                    a(href="/signup") Registrar
+                li(ng-show="user.authenticated", ng-class="{'active': '/profile' === vm.active}")
+                    a(href="/profile") {{user.email}}
+                li(ng-show="user.authenticated")
+                    a(href="#" ua-logout) Logout
