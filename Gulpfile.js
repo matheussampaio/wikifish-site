@@ -1,3 +1,4 @@
+var path = require('path');
 var fs = require('fs');
 var version = 'v' + JSON.parse(fs.readFileSync('package.json', 'utf8')).version;
 
@@ -23,29 +24,38 @@ var sourcemaps = require('gulp-sourcemaps');
 var ngAnnotate = require('gulp-ng-annotate');
 var autoprefixer = require('gulp-autoprefixer');
 var templateCache = require('gulp-angular-templatecache');
-
+//var compassImagehelper = require('gulp-compass-imagehelper');
 
 /* ========= */
 /* VARIABLES */
 /* ========= */
 
-var distJS = 'public';
-var srcJS = [
-    'src/**/app.module.js',
-    'src/**/app.config.js',
-    'src/**/*.module.js',
-    'src/**/*.js'
-];
-
-var srcCSS = [
-    'src/**/*.scss'
-];
-
-var distJade = 'public/templates';
-var srcJade = [
-    'views/**/*.jade'
-];
-
+var paths = {
+    app: 'app',
+    css: {
+        dist: 'public/assets/css'
+    },
+    dist: 'public',
+    images: {
+        src: 'app/assets/images/*.png',
+        dist: 'public/assets/images'
+    },
+    jade: {
+        src: 'views'
+    },
+    js: {
+        src: [
+            'app/**/app.module.js',
+            'app/**/app.config.js',
+            'app/**/*.module.js',
+            'app/**/*.js'
+        ],
+        dist: 'public'
+    },
+    sass: {
+        src: 'app/assets/css'
+    }
+};
 
 /* ================== */
 /* ONLY FOR DEVELOPER */
@@ -58,14 +68,14 @@ gulp.task('serve', function() {
 gulp.task('browser-sync', ['nodemon'], function() {
     browserSync.init(null, {
         proxy: 'http://localhost:3000',
-        files: ['public/**/*.*'],
+        files: [paths.dist + '/**/*.*'],
         port: 7000,
         open: false
     });
 
-    gulp.watch(srcCSS, ['build:scss']);
-    gulp.watch(srcJS, ['build:js']);
-    gulp.watch(srcJade).on('change', browserSync.reload);
+    gulp.watch(paths.sass.src + '/*.scss', ['build:scss']);
+    gulp.watch(paths.js.src, ['build:js']);
+    gulp.watch(paths.jade.src + '/**/*.jade').on('change', browserSync.reload);
 });
 
 gulp.task('nodemon', function (cb) {
@@ -73,9 +83,9 @@ gulp.task('nodemon', function (cb) {
         script: 'server.js',
         ext: 'js',
         ignore: [
-            'src/**', 
-            'views/**', 
-            'public/**', 
+            paths.app + '/**',
+            paths.jade.src + '/**',
+            paths.dist + '/**',
             'node_modules/**'
         ]
     }).on('start', function () {
@@ -88,37 +98,37 @@ gulp.task('nodemon', function (cb) {
 /* ========== */
 
 gulp.task('build', function() {
-    return runSequence('build:clean', ['build:js', 'build:scss']);
+    return runSequence('build:clean', ['build:js', 'build:images', 'build:scss']);
 });
 
 gulp.task('build:scss', function() {
-    gulp.src(srcCSS)
+    gulp.src(paths.sass.src + '/*.scss')
         .pipe(plumber({
-            errorHandler: function (error) {
-                console.log(error.message);
-                this.emit('end');
-        }}))
+            errorHandler: onError
+        }))
         .pipe(compass({
             project: __dirname,
-            css: 'public/stylesheets',
-            sass: 'src/stylesheets',
+            css: paths.css.dist,
+            sass: paths.sass.src,
             require: ['compass/import-once/activate', 'bootstrap-sass']
         }))
         .pipe(autoprefixer({
             browsers: ['last 2 versions']
         }))
         .pipe(minifyCSS())
-        .pipe(gulp.dest('public'));
+        .pipe(gulp.dest(paths.css.dist));
 });
 
+gulp.task('build:images', function() {
+    return gulp.src(paths.images.src)
+        .pipe(gulp.dest(paths.images.dist));
+});
 
 gulp.task('build:js', function() {
-    return gulp.src(srcJS)
+    return gulp.src(paths.js.src)
         .pipe(plumber({
-            errorHandler: function (error) {
-                console.log(error.message);
-                this.emit('end');
-        }}))
+            errorHandler: onError
+        }))
         .pipe(replace(/GULP_APP_VERSION/g, version))
         .pipe(jshint())
         .pipe(jshint.reporter(stylish))
@@ -128,24 +138,22 @@ gulp.task('build:js', function() {
             .pipe(ngAnnotate())
             .pipe(uglify())
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest(distJS));
+        .pipe(gulp.dest(paths.js.dist));
 });
 
-gulp.task('build:templates', ['build:jade'], function () {
-    gulp.src(distJade + '/**/*.html')
-        .pipe(templateCache())
-        .pipe(gulp.dest('public'));
-});
-
-gulp.task('build:jade', function() {
-    gulp.src(srcJade)
-        .pipe(jade({
-            pretty: true
-        }))
-        .pipe(gulp.dest(distJade));
-});
 gulp.task('build:clean', function(cb) {
     del([
-        'public/**'
+        paths.dist
     ], cb);
 });
+
+
+/*========*/
+/* OTHERS */
+/*========*/
+
+// Gulp plumber error handler
+var onError = function(err) {
+    console.error(err.message);
+    this.emit('end');
+};
