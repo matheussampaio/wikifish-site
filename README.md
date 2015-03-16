@@ -1,3 +1,5 @@
+[![Build Status - Travis-CI](https://travis-ci.org/matheussampaio/wikifish-site.svg?branch=master)](https://travis-ci.org/matheussampaio/wikifish-site)
+
 # Wikifish Site
 
 ```
