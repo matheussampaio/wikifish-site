@@ -2,15 +2,15 @@
     .wf-fish-icon-container
         img.wf-fish-icon(ng-src='{{fish.url_picture}}' wf-loading)
 
-    div.text-center
+    .wf-fish-details.text-center
         small.wf-icons(class="wf-icon-{{fish.alimentation | lowercase }}")
         small.wf-icons(class="wf-icon-{{fish.temperament | lowercase }}")
         small.wf-icons(class="wf-icon-{{fish.reproduction | lowercase }}")
         small.wf-icons(class="wf-icon-{{fish.aquarium_setup | lowercase }}")
         small.wf-icons(class="wf-icon-{{fish.swimming | lowercase }}")
-        small.wf-icons(class="wf-icon-{{fish.light | lowercase }}")
+        small.wf-icons(class="wf-icon-{{fish.illumination | lowercase }}")
         small.wf-detail {{fish.aquarium_liters}}L
         small.wf-detail {{fish.maximum_length}}cm
-        small.wf-detail {{fish.temperature}}C
-        small.wf-detail {{fish.ph}}pH
-        small.wf-detail {{fish.dh}}dH
+        small.wf-detail.hide-eq-sm {{fish.temperature}}C
+        small.wf-detail.hide-eq-sm {{fish.ph}}pH
+        small.wf-detail.hide-eq-sm {{fish.dh}}dH

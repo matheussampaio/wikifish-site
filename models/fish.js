@@ -18,6 +18,7 @@ var Fish = restful.model('fish', new mongoose.Schema({
         swimming: String,
         url_picture: String,
         comments: [],
+        illumination: String,
         region: String
     })).
     methods(['get', 'post', 'put', 'delete']);

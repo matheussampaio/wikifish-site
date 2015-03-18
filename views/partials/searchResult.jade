@@ -1,7 +1,8 @@
 wf-site
     wf-navbar(transclude-to='site-head', user='user')
-    .container(transclude-to='site-body')
+    .container-fluid(transclude-to='site-body')
 
         div.wf-search-not-found.text-center(ng-show='vm.fishs.length === 0') Nenhum peixe encontrado.
 
-        wf-fish-thumbnail(ng-repeat='fish in vm.fishs', fish='fish')
+        .wf-search-results
+            wf-fish-thumbnail(ng-repeat='fish in vm.fishs', fish='fish')

@@ -33,6 +33,7 @@ $ npm start
  - TOP
  - MIDDLE
  - BOTTOM
+ - ANY
 
 - Iluminação:
  - DARK

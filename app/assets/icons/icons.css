@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'wikifishicons';
-	src:url('fonts/wikifishicons.eot?7mpv1z');
-	src:url('fonts/wikifishicons.eot?#iefix7mpv1z') format('embedded-opentype'),
-		url('fonts/wikifishicons.woff?7mpv1z') format('woff'),
-		url('fonts/wikifishicons.ttf?7mpv1z') format('truetype'),
-		url('fonts/wikifishicons.svg?7mpv1z#wikifishicons') format('svg');
+	src:url('fonts/wikifishicons.eot?scnu3l');
+	src:url('fonts/wikifishicons.eot?#iefixscnu3l') format('embedded-opentype'),
+		url('fonts/wikifishicons.woff?scnu3l') format('woff'),
+		url('fonts/wikifishicons.ttf?scnu3l') format('truetype'),
+		url('fonts/wikifishicons.svg?scnu3l#wikifishicons') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -23,27 +23,23 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.wf-icon-dry_package_food:before {
-	content: "\e608";
-}
-
-.wf-icon-fish:before {
-	content: "\e600";
-}
-
-.wf-icon-plants:before {
-	content: "\e601";
-}
-
-.wf-icon-live_worms:before {
+.wf-icon-dark:before {
 	content: "\e602";
 }
 
-.wf-icon-dark:before {
+.wf-icon-light:before {
 	content: "\e603";
 }
 
-.wf-icon-medium:before {
+.wf-icon-any:before {
+	content: "\e600";
+}
+
+.wf-icon-danger:before {
+	content: "\e601";
+}
+
+.wf-icon-dry_package_food:before {
 	content: "\e604";
 }
 
@@ -51,11 +47,31 @@
 	content: "\e605";
 }
 
-.wf-icon-danger:before {
+.wf-icon-fish:before {
 	content: "\e606";
 }
 
+.wf-icon-live_worms:before {
+	content: "\e60a";
+}
+
+.wf-icon-medium:before {
+	content: "\e60b";
+}
+
+.wf-icon-middle:before {
+	content: "\e60c";
+}
+
 .wf-icon-peaceful:before {
-	content: "\e607";
+	content: "\e60d";
+}
+
+.wf-icon-plants:before {
+	content: "\e60e";
+}
+
+.wf-icon-top:before {
+	content: "\e60f";
 }
 
