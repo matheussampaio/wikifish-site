@@ -23,13 +23,27 @@
   img.wf-fish-icon {
     height: auto;
     width: auto;
-    max-width: 175px;
-    max-height: 175px;
+    max-width: 200px;
+    max-height: 200px;
   }
 
   .wf-fish-icon-container {
-    width: 175px;
-    height: 175px;
+    width: 200px;
+    height: 200px;
+  }
+
+  .wf-icons {
+    font-size: 1.5em;
+    color: white;
+    margin-right: 4px;
+  }
+
+  .wf-icon-dark {
+  }
+
+  .wf-detail {
+    margin-right: 4px;
+    color: white;
   }
 }
 
@@ -150,8 +164,4 @@ button.wf-btn-social {
   font-size: 10px;
   text-align: center;
   padding-top: 4px;
-}
-
-.wf-icon {
-  background-image: url("public/assets/svg/food_dry.svg");
 }

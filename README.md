@@ -5,8 +5,40 @@
 ```
 $ gem install compass
 $ gem install bootstrap-sass
+$ npm install
 $ npm start
 ```
+
+# Documentation
+
+## ENUMS:
+
+- Alimentação (alimentation):
+  - LIVE_WORMS
+  - PLANTS
+  - FISH
+  - DRY_PACKAGE_FOOD
+
+- Temperamento (temperament):
+  - PEACEFUL
+  - DANGER
+
+- Configuração do Aquário (aquarium_setup):
+  - COMPLETED_SET
+
+- Reprodução (reproduction):
+ - EGGLAYER
+
+- Estilo de nado (swimming):
+ - TOP
+ - MIDDLE
+ - BOTTOM
+
+- Iluminação:
+ - DARK
+ - MEDIUM
+ - BRIGHT
+
 
 ## License
 MIT

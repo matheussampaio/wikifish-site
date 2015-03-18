@@ -1,4 +1,3 @@
-var path = require('path');
 var fs = require('fs');
 var version = 'v' + JSON.parse(fs.readFileSync('package.json', 'utf8')).version;
 
@@ -10,7 +9,6 @@ var browserSync = require('browser-sync');
 var runSequence = require('run-sequence');
 var stylish = require('jshint-stylish');
 
-var jade = require('gulp-jade');
 var babel = require('gulp-babel');
 var jshint = require('gulp-jshint');
 var concat = require('gulp-concat');
@@ -23,8 +21,6 @@ var minifyCSS= require('gulp-minify-css');
 var sourcemaps = require('gulp-sourcemaps');
 var ngAnnotate = require('gulp-ng-annotate');
 var autoprefixer = require('gulp-autoprefixer');
-var templateCache = require('gulp-angular-templatecache');
-//var compassImagehelper = require('gulp-compass-imagehelper');
 
 /* ========= */
 /* VARIABLES */
@@ -74,6 +70,7 @@ gulp.task('browser-sync', ['nodemon'], function() {
     });
 
     gulp.watch(paths.sass.src + '/*.scss', ['build:scss']);
+    gulp.watch(paths.images.src + '/*.scss', ['build:images']);
     gulp.watch(paths.js.src, ['build:js']);
     gulp.watch(paths.jade.src + '/**/*.jade').on('change', browserSync.reload);
 });
@@ -98,7 +95,7 @@ gulp.task('nodemon', function (cb) {
 /* ========== */
 
 gulp.task('build', function() {
-    return runSequence('build:clean', ['build:js', 'build:images', 'build:scss']);
+    return runSequence('build:clean', ['build:js', 'build:icons', 'build:images', 'build:scss']);
 });
 
 gulp.task('build:scss', function() {
@@ -122,6 +119,12 @@ gulp.task('build:scss', function() {
 gulp.task('build:images', function() {
     return gulp.src(paths.images.src)
         .pipe(gulp.dest(paths.images.dist));
+});
+
+// just a icon hack
+gulp.task('build:icons', function() {
+    return gulp.src('app/assets/icons/**', {base:'app/assets/'})
+        .pipe(gulp.dest('public/assets'));
 });
 
 gulp.task('build:js', function() {
