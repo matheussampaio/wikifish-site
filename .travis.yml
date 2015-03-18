@@ -13,5 +13,4 @@ deploy:
   skip_cleanup: true
   buildpack: nodejs
   app:
-    master: dev-wikifish
-    production: appwikifish
+    master: appwikifish
