@@ -16,9 +16,7 @@
             $scope.vm.fish = fish;
         });
 
-        Comment.getCommentsByFishID(fishID).then((comments) => {
-            $scope.vm.comments = comments;
-        });
+        $scope.vm.commentsService = Comment.getCommentsByFishID(fishID);
     }
 
 })();

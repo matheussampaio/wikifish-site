@@ -7,7 +7,7 @@
 
     CommentDirective.$inject = ['Comment'];
 
-    function CommentDirective() {
+    function CommentDirective(Comment) {
         return {
             restrict: 'E',
             templateUrl: 'partials/wfComment',
@@ -19,22 +19,29 @@
 
                 scope.data = {
                     likes: scope.comment.likes.length,
-                    alreadyLike: scope.comment.likes.indexOf(scope.user.login) !== -1
+                    alreadyLike: scope.comment.likes.indexOf(scope.user.email) !== -1
                 };
 
                 var btnLike = element.find('#like');
 
                 btnLike.on('mouseenter', function() {
-                    scope.data.likes = '+1';
-                    scope.$apply();
+                    if (!scope.alreadyLike) {
+                        scope.data.likes = '+1';
+                        scope.$apply();
+                    }
                 });
 
                 btnLike.on('mouseleave', function() {
-                    scope.data.likes = scope.comment.likes.length;
-                    scope.$apply();
+                    if (!scope.alreadyLike) {
+                        scope.data.likes = scope.comment.likes.length;
+                        scope.$apply();
+                    }
                 });
 
-                //scope.likeComment = CommentsService.likeComment;
+                scope.likeComment = (commentId, userEmail) => {
+                    scope.alreadyLike = true;
+                    Comment.likeComment(commentId, userEmail);
+                };
             }
         };
     }

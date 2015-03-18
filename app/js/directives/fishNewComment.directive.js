@@ -21,14 +21,12 @@
                     var newComment = {
                         parent: scope.fish._id,
                         text: scope.text,
-                        user: scope.user.login,
-                        likes: [scope.user.login]
+                        user: scope.user.email,
+                        likes: [scope.user.email]
                     };
 
-                    Comment.addComment(newComment)
-                        .then((data) => {
-                            scope.text = '';
-                        });
+                    Comment.addComment(newComment);
+                    scope.text = '';
 
                 };
 

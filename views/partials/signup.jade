@@ -17,9 +17,9 @@ wf-site
         form(ua-signup)
             p(ng-show"error") {{ error.message }}
             .form-group
-                input.form-control.wf-form-input(name="login", type="text", placeholder="Coloque o seu login")
+                input.form-control.wf-form-input(name="first_name", placeholder="Nickname")
             .form-group
-                input.form-control.wf-form-input(name="email", type="email", placeholder="Coloque o seu email")
+                input.form-control.wf-form-input(name="login", placeholder="Email", ua-is-email)
             .form-group
                 input.form-control.wf-form-input(name="password", type="password", placeholder="Senha")
             .form-group.form-inline

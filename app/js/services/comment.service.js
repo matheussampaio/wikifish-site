@@ -12,7 +12,10 @@
             resource: getResource(),
             getCommentsByFishID: getCommentsByFishID,
             addComment: addComment,
-            likeComment: likeComment
+            likeComment: likeComment,
+            data: {
+                comments: []
+            }
         };
 
         return service;
@@ -37,13 +40,15 @@
         }
 
         function getCommentsByFishID(fishID) {
-            return service.resource.fish({'fish': fishID})
+            service.resource.fish({'fish': fishID})
                 .$promise
                 .then(getCommentsByFishIDComplete)
                 .catch(getCommentsByFishIDFailed);
 
-            function getCommentsByFishIDComplete(response) {
-                return response;
+            return service.data;
+
+            function getCommentsByFishIDComplete(comments) {
+                service.data.comments = comments;
             }
 
             function getCommentsByFishIDFailed(error) {
@@ -52,13 +57,15 @@
         }
 
         function addComment(comment) {
-            return service.resource.save(comment)
+            service.resource.save(comment)
                 .$promise
                 .then(addCommentComplete)
                 .catch(addCommentFailed);
 
-            function addCommentComplete(response) {
-                return response;
+            return service.data;
+
+            function addCommentComplete(comment) {
+                service.data.comments.push(comment);
             }
 
             function addCommentFailed(error) {
@@ -67,17 +74,18 @@
         }
 
         function likeComment(commentID, userLogin) {
-            return service.resource.lile({'id': commentID, 'user': userLogin})
+            return service.resource.like({'id': commentID, 'user': userLogin})
+                .$promise
                 .then(likeCommentComplete)
                 .catch(likeCommentFailed);
 
-            function likeCommentComplete(response) {
-                //for (var i in commentsService.comments) {
-                //    if (commentsService.comments[i]._id === comment._id) {
-                //        commentsService.comments[i] = comment;
-                //    }
-                //}
-                return response;
+            function likeCommentComplete(comment) {
+                for (var i in service.data.comments) {
+                    if (service.data.comments[i]._id === comment._id) {
+                        service.data.comments[i] = comment;
+                    }
+                }
+                return comment;
             }
 
             function likeCommentFailed(error) {
