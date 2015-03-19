@@ -28,7 +28,9 @@ $ npm start
 
 - Reprodução (reproduction):
  - EGGLAYER
-
+ - LIVEBEARER
+ - MOUTHBROODER
+ - 
 - Estilo de nado (swimming):
  - TOP
  - MIDDLE
