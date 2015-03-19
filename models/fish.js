@@ -17,7 +17,6 @@ var Fish = restful.model('fish', new mongoose.Schema({
         aquarium_setup: String,
         swimming: String,
         url_picture: String,
-        comments: [],
         illumination: String,
         region: String
     })).

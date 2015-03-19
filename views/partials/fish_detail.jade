@@ -1,11 +1,25 @@
 wf-site
     wf-navbar(transclude-to='site-head', user='user')
-    .container(transclude-to='site-body')
+    .container-fluid(transclude-to='site-body')
         .wf-fish-detail
-            .wf-fish-icon-container
-                img.wf-fish-icon(ng-src='{{vm.fish.url_picture}}', wf-loading)
+            .left
+                .left-top
+                    img.wf-fish-icon(ng-src='{{vm.fish.url_picture}}', wf-loading)
 
-            .wf-fish-infos
+                .left-bottom.text-center
+                    small.wf-icons(class="wf-icon-{{vm.fish.alimentation | lowercase }}")
+                    small.wf-icons(class="wf-icon-{{vm.fish.temperament | lowercase }}")
+                    small.wf-icons(class="wf-icon-{{vm.fish.reproduction | lowercase }}")
+                    small.wf-icons(class="wf-icon-{{vm.fish.aquarium_setup | lowercase }}")
+                    small.wf-icons(class="wf-icon-{{vm.fish.swimming | lowercase }}")
+                    small.wf-icons(class="wf-icon-{{vm.fish.illumination | lowercase }}")
+                    small.wf-detail {{vm.fish.aquarium_liters}}L
+                    small.wf-detail {{vm.fish.maximum_length}}cm
+                    small.wf-detail.hide-eq-sm {{vm.fish.temperature}}C
+                    small.wf-detail.hide-eq-sm {{vm.fish.ph}}pH
+                    small.wf-detail.hide-eq-sm {{vm.fish.dh}}dH
+
+            .right
                 p(ng-show='vm.fish.usual_name')
                     span.wf-title Nome Usual:
                     span.wf-desc(ng-bind='vm.fish.usual_name | ucfirst')
