@@ -25,6 +25,9 @@ $ npm start
 
 - Configuração do Aquário (aquarium_setup):
   - COMPLETED_SET
+  - ONLY_PLANTS
+  - ONLY_ROCKS
+  - ONLY_SUBSTRACT
 
 - Reprodução (reproduction):
  - EGGYLAYER
