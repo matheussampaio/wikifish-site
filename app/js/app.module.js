@@ -11,7 +11,8 @@
         'wfApp.services',
         'wfApp.factories',
         'wfApp.directives',
-        'wfApp.controllers'
+        'wfApp.controllers',
+        'wfApp.i18n'
     ]);
 
 })();

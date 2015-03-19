@@ -1,30 +1,71 @@
 wf-site
-   wf-navbar(transclude-to='site-head', user='user')
-   .container(transclude-to='site-body')
-      .wf-fish-detail
-         .wf-fish-icon-container
-            img.wf-fish-icon(ng-src='{{vm.fish.url_picture}}', wf-loading)
+    wf-navbar(transclude-to='site-head', user='user')
+    .container(transclude-to='site-body')
+        .wf-fish-detail
+            .wf-fish-icon-container
+                img.wf-fish-icon(ng-src='{{vm.fish.url_picture}}', wf-loading)
 
-         .wf-fish-infos
-            p(ng-show='vm.fish.usual_name') Nome Usual: {{vm.fish.usual_name | ucfirst}}
-            p(ng-show='vm.fish.cientific_name') Nome Cientifico: {{vm.fish.cientific_name | ucfirst}}
-            p(ng-show='vm.fish.ph') PH: {{vm.fish.ph}}
-            p(ng-show='vm.fish.dh') DH: {{vm.fish.dh}}
-            p(ng-show='vm.fish.temperature') Temperatura: {{vm.fish.dh}}
-            p(ng-show='vm.fish.maximum_length') Tamanho Máximo: {{vm.fish.maximum_length}}cm
-            p(ng-show='vm.fish.aquarium_liters') Tamanho Aquario: {{vm.fish.aquarium_liters}} L
-            p(ng-show='vm.fish.aquarium_setup') Configuração do Aquario: {{vm.fish.aquarium_setup}}
-            p(ng-show='vm.fish.alimentation') Alimentação: {{vm.fish.alimentation}}
-            p(ng-show='vm.fish.reproduction') Reprodução: {{vm.fish.reproduction}}
-            p(ng-show='vm.fish.temperament') Temperamento: {{vm.fish.temperament}}
-            p(ng-show='vm.fish.swimming') Swimming: {{vm.fish.swimming}}
-            p(ng-show='vm.fish.region') Região: {{vm.fish.region}}
+            .wf-fish-infos
+                p(ng-show='vm.fish.usual_name')
+                    span.wf-title Nome Usual:
+                    span.wf-desc(ng-bind='vm.fish.usual_name | ucfirst')
 
-      wf-fish-new-comment(user='user', fish='vm.fish')
+                p(ng-show='vm.fish.cientific_name')
+                    span.wf-title Nome Cientifico:
+                    span.wf-desc(ng-bind='vm.fish.cientific_name | ucfirst')
 
-      .wf-fish-comments.panel.panel-default(ng-show='vm.commentsService.comments.length > 0')
-         .panel-heading Comentários
+                p(ng-show='vm.fish.ph')
+                    span.wf-title PH:
+                    span.wf-desc(ng-bind='vm.fish.ph')
 
-         ul.list-group
-            li.list-group-item.wf-fish-comment(ng-repeat='comment in vm.commentsService.comments | orderBy:["-likes.length", "updated"]')
-               wf-comment(comment='comment', user='user')
+                p(ng-show='vm.fish.dh')
+                    span.wf-title DH:
+                    span.wf-desc(ng-bind='vm.fish.dh')
+
+                p(ng-show='vm.fish.temperature')
+                    span.wf-title Temperatura:
+                    span.wf-desc(ng-bind='vm.fish.dh')
+                    small °C
+                    
+                p(ng-show='vm.fish.maximum_length')
+                    span.wf-title Tamanho Máximo:
+                    span.wf-desc(ng-bind='vm.fish.maximum_length')
+                    small cm
+
+                p(ng-show='vm.fish.aquarium_liters')
+                    span.wf-title Tamanho Aquário:
+                    span.wf-desc(ng-bind='vm.fish.aquarium_liters')
+                    small L
+
+                p(ng-show='vm.fish.aquarium_setup')
+                    span.wf-title Configuração do Aquario:
+                    span.wf-desc(ng-bind='vm.i18n[vm.fish.aquarium_setup]')
+
+                p(ng-show='vm.fish.alimentation')
+                    span.wf-title Alimentação:
+                    span.wf-desc(ng-bind='vm.i18n[vm.fish.alimentation]')
+
+                p(ng-show='vm.fish.reproduction')
+                    span.wf-title Reprodução:
+                    span.wf-desc(ng-bind='vm.i18n[vm.fish.reproduction]')
+
+                p(ng-show='vm.fish.temperament')
+                    span.wf-title Temperamento:
+                    span.wf-desc(ng-bind='vm.i18n[vm.fish.temperament]')
+
+                p(ng-show='vm.fish.swimming')
+                    span.wf-title Swimming:
+                    span.wf-desc(ng-bind='vm.i18n[vm.fish.swimming]')
+
+                p(ng-show='vm.fish.region')
+                    span.wf-title Região:
+                    span.wf-desc(ng-bind='vm.fish.region')
+
+        wf-fish-new-comment(user='user', fish='vm.fish')
+
+        .wf-fish-comments.panel.panel-default(ng-show='vm.commentsService.comments.length > 0')
+            .panel-heading Comentários
+
+            ul.list-group
+                li.list-group-item.wf-fish-comment(ng-repeat='comment in vm.commentsService.comments | orderBy:["-likes.length", "updated"]')
+                    wf-comment(comment='comment', user='user')

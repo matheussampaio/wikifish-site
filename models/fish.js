@@ -3,7 +3,7 @@ var restful = require('node-restful'),
 
 // define the schema for our user model
 var Fish = restful.model('fish', new mongoose.Schema({
-        usual_name: { type: String, trim: true, required: true, lowercase: true, unique: true },
+        usual_name: { type: String, trim: true, lowercase: true},
         cientific_name: { type: String, trim: true, required: true, lowercase: true, unique: true },
         ph: Number,
         dh: Number,
