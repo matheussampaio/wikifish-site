@@ -27,7 +27,9 @@ $ npm start
   - COMPLETED_SET
 
 - Reprodução (reproduction):
- - EGGLAYER
+ - EGGYLAYER
+ - LIVEBEARER
+ - MOUTHBROODER
 
 - Estilo de nado (swimming):
  - TOP
