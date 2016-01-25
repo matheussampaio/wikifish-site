@@ -1,0 +1,79 @@
+usual_name,cientific_name,ph,dh,temperature,maximumlenght,aquarium litters,alimentation,reproduction,illumination,temperament,aquarium_setup,swimming,url_picture,Region
+Peixe Espada,Xiphophorus hellerii,7.3,14.0,25.0,13.0,60.0,DRY_PACKAGE_FOOD,LIVEBEARER,MEDIUM,PEACEFUL,COMPLETED_SET,ANY,http://goo.gl/vRNdQ8,Neotropical
+Lebiste (Guppy),Poecilia reticulata,7.0,20.0,25.0,6.0,50.0,DRY_PACKAGE_FOOD,LIVEBEARER,MEDIUM,PEACEFUL,COMPLETED_SET,ANY,http://goo.gl/QDRN7G,Neotropical
+Platy,Xiphophorus maculatus,7.5,20.0,22.0,6.0,50.0,DRY_PACKAGE_FOOD,EGGYLAYER,MEDIUM,PEACEFUL,COMPLETED_SET,MIDDLE,http://goo.gl/2uFZyQ,Neotropical
+Molinésia,Poecilia latipinna,8.0,35.0,26.0,15.0,100.0,DRY_PACKAGE_FOOD,LIVEBEARER,MEDIUM,PEACEFUL,COMPLETED_SET,ANY,http://goo.gl/vRNdQ8,Neotropical
+Vivíparo Anão# Peixe-Mosquito Americano,Heterandria formosa,8.0,10.0,24.0,3.5,50.0,LIVE_WORMS,EGGYLAYER,MEDIUM,PEACEFUL,COMPLETED_SET,TOP,http://goo.gl/3LBjZV,North American
+Betta,Betta splendens,7.0,8.0,26.0,6.0,40.0,DRY_PACKAGE_FOOD,EGGYLAYER,MEDIUM,PEACEFUL,COMPLETED_SET,TOP,http://goo.gl/Z0EfMS,Southeast Asian
+Penang Betta,Betta pugnax,7.2,10.0,24.0,10.0,100.0,LIVE_WORMS,MOUTHBROODER,MEDIUM,PEACEFUL,COMPLETED_SET,TOP,http://goo.gl/266vHZ,Southeast Asian
+Peixe Paraíso,Macropodus opercularis,7.0,8.0,23.0,8.0,80.0,DRY_PACKAGE_FOOD,EGGYLAYER,MEDIUM,DANGER,COMPLETED_SET,MIDDLE,http://goo.gl/qWemxG,Southeast Asian
+Tricogaster Azul,Trichogaster trichopterus,6.8,6.0,27.0,15.0,200.0,DRY_PACKAGE_FOOD,EGGYLAYER,MEDIUM,PEACEFUL,COMPLETED_SET,TOP,http://goo.gl/kCyWpB,Southeast Asian
+Tricogaster Prata,Trichogaster microlepis,6.8,7.0,27.0,15.0,200.0,DRY_PACKAGE_FOOD,EGGYLAYER,MEDIUM,PEACEFUL,COMPLETED_SET,TOP,http://goo.gl/wsXrLT,Southeast Asian
+Tricogaster Cobra,Trichogaster pectoralis,6.8,7.0,26.0,26.0,300.0,DRY_PACKAGE_FOOD,EGGYLAYER,MEDIUM,PEACEFUL,COMPLETED_SET,TOP,http://goo.gl/vvnGF4,Southeast Asian
+Tricogaster Chocolate,Sphaerichthys osphromenoides,6.5,3.0,28.0,5.0,40.0,LIVE_WORMS,MOUTHBROODER,MEDIUM,PEACEFUL,COMPLETED_SET,ANY,http://goo.gl/IA7LR7,Southeast Asian
+Beijador,Helostoma temmincki,7.0,10.0,26.0,30.0,400.0,DRY_PACKAGE_FOOD,EGGYLAYER,MEDIUM,PEACEFUL,COMPLETED_SET,MIDDLE,http://goo.gl/VmV7wq,Southeast Asian
+Gourami Gigante# Gurami Comum,Osphronemus goramy,7.0,8.0,27.0,60.0,800.0,DRY_PACKAGE_FOOD,EGGYLAYER,MEDIUM,PEACEFUL,COMPLETED_SET,TOP,http://goo.gl/UmcfFx,Southeast Asian
+Percina Aurantiaca,Percina Aurantiaca,7.0,10.0,18.0,16.0,100.0,LIVE_WORMS,EGGYLAYER,MEDIUM,PEACEFUL,ONLY_ROCKS,BOTTOM,http://goo.gl/Fl1J9a,North American
+Etheostoma Zonistium,Etheostoma Zonistium,7.0,10.0,18.0,7.0,100.0,LIVE_WORMS,EGGYLAYER,MEDIUM,PEACEFUL,ONLY_SUBSTRACT,BOTTOM,http://goo.gl/dnd21r,North American
+Perca-Sol,Lepomis Gibbosus,7.0,5.0,20.0,25.0,250.0,LIVE_WORMS,EGGYLAYER,MEDIUM,DANGER,ONLY_PLANTS,BOTTOM,http://goo.gl/NyEB4l,North American
+Lepomis megalotis,Lepomis megalotis,7.5,12.0,22.0,20.0,200.0,LIVE_WORMS,EGGYLAYER,MEDIUM,DANGER,ONLY_PLANTS,BOTTOM,http://goo.gl/DZSbXI,North American
+Micropterus dolomineu,Micropterus dolomineu,7.0,5.0,18.0,70.0,1000.0,FISH,EGGYLAYER,DARK,DANGER,COMPLETED_SET,BOTTOM,http://goo.gl/CGtVel,North American
+Micropterus Punctulatus,Micropterus Punctulatus,7.0,5.0,20.0,60.0,1000.0,FISH,EGGYLAYER,MEDIUM,DANGER,COMPLETED_SET,BOTTOM,http://goo.gl/eozyDf,North American
+Percina Rex,Percina Rex,7.0,10.0,18.0,13.0,100,LIVE_WORMS,EGGYLAYER,MEDIUM,PEACEFUL,ONLY_ROCKS,BOTTOM,http://goo.gl/U9RC87,North American
+Percina Macrolepida,Percina Macrolepida,7.0,10.0,18.0,10.0,100,LIVE_WORMS,EGGYLAYER,MEDIUM,PEACEFUL,ONLY_ROCKS,BOTTOM,http://goo.gl/Wg1N4g,North American
+Niangua Darte,Etheostoma Nianguae,7.0,10.0,18.0,12.0,100,LIVE_WORMS,EGGYLAYER,MEDIUM,PEACEFUL,ONLY_ROCKS,BOTTOM,http://goo.gl/rW4qwb,North American
+Etheostoma Cinereum,Etheostoma Cinereum,7.0,10.0,18.0,11.0,100,LIVE_WORMS,EGGYLAYER,MEDIUM,PEACEFUL,ONLY_ROCKS,BOTTOM,http://goo.gl/QBq9JL,North American
+Etheostoma Blenniodes,Etheostoma Blenniodes,7.0,10.0,20.0,13.0,100,LIVE_WORMS,EGGYLAYER,MEDIUM,PEACEFUL,COMPLETED_SET,BOTTOM,http://goo.gl/AP7Unw,North American
+Etheostoma sp.,Etheostoma sp.,7.0,10.0,18.0,5.0,100,LIVE_WORMS,EGGYLAYER,MEDIUM,PEACEFUL,COMPLETED_SET,BOTTOM,http://goo.gl/5TCcnn,North American
+Cottus Bairdi,Cottus Bairdi,7.0,10.0,16.0,8.0,100,LIVE_WORMS,EGGYLAYER,MEDIUM,PEACEFUL,ONLY_ROCKS,BOTTOM,http://goo.gl/WVMun6,North American
+Perca Flavescens,Perca Flavescens,7.5,10.0,12.0,40.0,1000,FISH,EGGYLAYER,MEDIUM,DANGER,ONLY_ROCKS,BOTTOM,http://goo.gl/5gkTlg,North American
+Stizostedion Vitreum,Stizostedion Vitreum,7.5,10.0,12.0,107.0,1000,FISH,EGGYLAYER,MEDIUM,DANGER,ONLY_ROCKS,BOTTOM,http://goo.gl/vUOimz,North American
+Agonostomus Monticola,Agonostomus Monticola,8.5,20.0,20.0,30.0,500,LIVE_WORMS,EGGYLAYER,DARK,PEACEFUL,ONLY_SUBSTRACT,ANY,http://goo.gl/BDwN2g,North American
+Cichlasoma Cyanoguttatum,Cichlasoma Cyanoguttatum,7.0,3.0,23.0,25.0,500,DRY_PACKAGE_FOOD,EGGYLAYER,MEDIUM,DANGER,COMPLETED_SET,MIDDLE,http://goo.gl/44SB89,North American
+Dormitator Maculatus,Dormitator Maculatus,8.0,15.0,24.0,25.0,250,LIVE_WORMS,EGGYLAYER,DARK,DANGER,COMPLETED_SET,BOTTOM,http://goo.gl/JEgnhP,North American
+Gobioides Broussonetti,Gobioides Broussonetti,8.5,20.0,20.0,50.0,1000,LIVE_WORMS,EGGYLAYER,DARK,PEACEFUL,COMPLETED_SET,BOTTOM,http://goo.gl/i5Zymq,North American
+Mugil Cephalus,Mugil Cephalus,8.5,20.0,20.0,60.0,1000,LIVE_WORMS,EGGYLAYER,MEDIUM,PEACEFUL,ONLY_SUBSTRACT,TOP,http://goo.gl/kmLIL1,North American
+Pseudoscaphirhynchus Kaufmani,Pseudoscaphirhynchus Kaufmani,7.0,11.0,18.0,60.0,400,LIVE_WORMS,EGGYLAYER,DARK,DANGER,ONLY_SUBSTRACT,BOTTOM,http://goo.gl/e1YyiD,Eurasian
+Acipenser Baeri Baicalensis,Acipenser Baeri Baicalensis,7.8,12.0,18.0,200.0,2000,LIVE_WORMS,EGGYLAYER,DARK,DANGER,ONLY_SUBSTRACT,BOTTOM,http://goo.gl/VztyW3,Eurasian
+Thymallus Thymallus,Thymallus Thymallus,8.0,12.0,8.0,46.0,500.0,LIVE_WORMS,EGGYLAYER,MEDIUM,PEACEFUL,ONLY_PLANTS,BOTTOM,http://goo.gl/9lUJsC,Eurasian
+Carpa Comum,Cyprinus Carpio,7.6,12.0,19.0,60.0,500.0,LIVE_WORMS,EGGYLAYER,MEDIUM,PEACEFUL,COMPLETED_SET,ANY,http://goo.gl/CPftBh,Eurasian
+Beluga,Huso Huso,7.6,12.0,10.0,900.0,2000.0,LIVE_WORMS,EGGYLAYER,MEDIUM,DANGER,ONLY_SUBSTRACT,BOTTOM,http://goo.gl/D8GDHQ,Eurasian
+Umbra Krameri,Umbra Krameri,7.5,10.0,12.0,12.0,100.0,LIVE_WORMS,EGGYLAYER,MEDIUM,PEACEFUL,COMPLETED_SET,BOTTOM,http://goo.gl/9qRXYe,Eurasian
+Alburnoides Bipunctatus,Alburnoides Bipunctatus,7.0,10.0,20.0,15.0,250.0,LIVE_WORMS,EGGYLAYER,MEDIUM,PEACEFUL,ONLY_ROCKS,ANY,http://goo.gl/i0qPhN,Eurasian
+Brema,Abramis Brama,7.0,10.0,22.0,30.0,300.0,LIVE_WORMS,EGGYLAYER,MEDIUM,PEACEFUL,COMPLETED_SET,ANY,http://goo.gl/sVQwWI,Eurasian
+Alburnus Alburnos,Alburnus Alburnos,7.0,10.0,15.0,20.0,250.0,LIVE_WORMS,EGGYLAYER,BRIGHT,PEACEFUL,COMPLETED_SET,ANY,http://goo.gl/MU4jdu,Eurasian
+Kinguio# Japones,Carassius Auratus,7.6,12.0,19.0,10.0,75.0,LIVE_WORMS,EGGYLAYER,MEDIUM,PEACEFUL,COMPLETED_SET,ANY,http://goo.gl/urZ0DG,Eurasian
+Kinguio# Japones# Telescopio,Carassius Auratus,7.6,12.0,19.0,10.0,75.0,LIVE_WORMS,EGGYLAYER,MEDIUM,PEACEFUL,COMPLETED_SET,ANY,http://goo.gl/Mm9uuX,Eurasian
+Kinguio# Japones# Bolha,Carassius Auratus,7.6,12.0,19.0,10.0,75.0,LIVE_WORMS,EGGYLAYER,MEDIUM,PEACEFUL,COMPLETED_SET,ANY,http://ngbettas.com.br/loja/image/cache/data/peixes/Kinguio-olhos-bolha-500x500.jpg,Eurasian
+Kinguio# Japones# Lionhead,Carassius Auratus,7.6,12.0,19.0,10.0,75.0,LIVE_WORMS,EGGYLAYER,MEDIUM,PEACEFUL,COMPLETED_SET,ANY,http://goo.gl/hXe8kN,Eurasian
+Gobio,Gobio Gobio,7.0,0.0,18.0,15.0,100.0,LIVE_WORMS,EGGYLAYER,MEDIUM,PEACEFUL,COMPLETED_SET,BOTTOM,http://goo.gl/FZGlXM,Eurasian
+Barbo,Barbus Barbus,7.0,12.0,20.0,80.0,200.0,LIVE_WORMS,EGGYLAYER,MEDIUM,PEACEFUL,COMPLETED_SET,ANY,http://goo.gl/0NTnk6,Eurasian
+Tenca,Tinca Tinca,6.7,8.0,18.0,83.0,200.0,LIVE_WORMS,EGGYLAYER,MEDIUM,PEACEFUL,COMPLETED_SET,BOTTOM,http://goo.gl/nct4nY,Eurasian
+Blicca Bjoerkna,Blicca Bjoerkna,7.3,10.0,18.0,8.0,75.0,LIVE_WORMS,EGGYLAYER,MEDIUM,PEACEFUL,COMPLETED_SET,ANY,http://goo.gl/Lnnh5J,Eurasian
+Carassius Carassius,Carassius Carassius,7.6,12.0,18.0,30.0,200.0,LIVE_WORMS,EGGYLAYER,MEDIUM,PEACEFUL,COMPLETED_SET,ANY,http://goo.gl/7vqp31,Eurasian
+Alburnoides Bipunctatus,Alburnoides Bipunctatus,7.0,10.0,20.0,15.0,250.0,LIVE_WORMS,EGGYLAYER,MEDIUM,PEACEFUL,COMPLETED_SET,MIDDLE,http://goo.gl/mPZZds,Eurasian
+Escalus-Prateado,Leuciscus Idus,7.5,12.0,18.0,35.0,400.0,LIVE_WORMS,EGGYLAYER,MEDIUM,PEACEFUL,COMPLETED_SET,BOTTOM,http://goo.gl/W3vQt1,Eurasian
+Gnathopogon Chankaensis,Gnathopogon Chankaensis,7.5,12.0,18.0,9.0,100.0,LIVE_WORMS,EGGYLAYER,MEDIUM,PEACEFUL,COMPLETED_SET,BOTTOM,http://goo.gl/xiDggq,Eurasian
+Leuciscus Cephalus,Leuciscus Cephalus,7.5,12.0,18.0,60.0,400.0,FISH,EGGYLAYER,MEDIUM,DANGER,ONLY_PLANTS,ANY,http://goo.gl/346sPK,Eurasian
+Ctenopharyngodon Idella,Ctenopharyngodon Idella,7.5,12.0,18.0,100.0,1000.0,FISH,EGGYLAYER,MEDIUM,PEACEFUL,ONLY_ROCKS,MIDDLE,http://goo.gl/oeDcTu,Eurasian
+Aphanius Mento,Aphanius Mento,7.8,20.0,22.0,5.0,50.0,LIVE_WORMS,EGGYLAYER,MEDIUM,PEACEFUL,COMPLETED_SET,ANY,http://goo.gl/irMnWT,Eurasian
+Phoxinus Phoxinus,Phoxinus Phoxinus,7.0,10.0,18.0,12.0,100.0,LIVE_WORMS,EGGYLAYER,MEDIUM,PEACEFUL,ONLY_PLANTS,ANY,http://www2.dnr.cornell.edu/cek7/nyfish/Cyprinidae/northern_redbelly_dace.jpg,Eurasian
+Acanthorhodeus Asmussi,Acanthorhodeus Asmussi,7.2,10.0,18.0,16.0,150.0,LIVE_WORMS,EGGYLAYER,MEDIUM,PEACEFUL,ONLY_PLANTS,MIDDLE,http://goo.gl/z2Mqfl,Eurasian
+Scardineus Erythrophthalmus,Scardineus Erythrophthalmus,7.0,10.0,18.0,20.0,200.0,LIVE_WORMS,EGGYLAYER,MEDIUM,PEACEFUL,COMPLETED_SET,ANY,http://goo.gl/hLDzXs,Eurasian
+Vimba Vimba,Vimba Vimba,8.0,12.0,16.0,50.0,200.0,LIVE_WORMS,EGGYLAYER,MEDIUM,PEACEFUL,COMPLETED_SET,BOTTOM,http://goo.gl/xNGMdm,Eurasian
+Botia tigre,Leptobotia Mantschurica,6.8,12.0,24.0,25.0,250.0,LIVE_WORMS,EGGYLAYER,DARK,PEACEFUL,COMPLETED_SET,BOTTOM,http://fishbase.sinica.edu.tw/images/species/pafas_u0.jpg,Eurasian
+Peixe Meteorologico,Misgurnus fossilis,6.7,6.0,18.0,20.0,75.0,LIVE_WORMS,EGGYLAYER,DARK,PEACEFUL,COMPLETED_SET,BOTTOM,http://goo.gl/1ZILIn,Eurasian
+Mocinha,NIwaella Delicata,7.8,12.0,18.0,12.5,75.0,LIVE_WORMS,EGGYLAYER,DARK,PEACEFUL,COMPLETED_SET,BOTTOM,http://goo.gl/kWgfVc,Eurasian
+Noemacheilus Barbatulus,Noemacheilus Barbatulus,7.8,12.0,18.0,12.5,75.0,LIVE_WORMS,EGGYLAYER,DARK,PEACEFUL,COMPLETED_SET,BOTTOM,http://goo.gl/xLMW4B,Eurasian
+Sarcochilichthys Sinensis,Sarcochilichthys Sinensis,7.6,12.0,16.0,30.0,300.0,LIVE_WORMS,EGGYLAYER,DARK,PEACEFUL,COMPLETED_SET,BOTTOM,http://goo.gl/qlPYi8,Eurasian
+Enguia Europeia,Anguilla Anguilla,8.5,20.0,22.0,120.0,1000.0,LIVE_WORMS,EGGYLAYER,DARK,DANGER,COMPLETED_SET,BOTTOM,http://goo.gl/VrQ9XY,Eurasian
+Pungitius Pungitius,Pungitius Pungitius,7.0,12.0,15.0,8.0,50.0,LIVE_WORMS,EGGYLAYER,MEDIUM,PEACEFUL,COMPLETED_SET,ANY,http://goo.gl/zKVOk7,Eurasian
+Stizostedion Lucioperca,Stizostedion Lucioperca,7.5,12.0,18.0,50.0,200.0,FISH,EGGYLAYER,MEDIUM,DANGER,ONLY_SUBSTRACT,BOTTOM,http://goo.gl/nk6KD1,Eurasian
+Aphanius Iberus,Aphanius Iberus,8.0,20.0,22.0,5.0,50.0,DRY_PACKAGE_FOOD,EGGYLAYER,MEDIUM,PEACEFUL,COMPLETED_SET,ANY,http://goo.gl/CJOlyn,Eurasian
+Peixe Pedra,Cottus Gobio,7.6,12.0,18.0,10.0,100.0,LIVE_WORMS,EGGYLAYER,DARK,PEACEFUL,ONLY_ROCKS,BOTTOM,http://goo.gl/PMaaPD,Eurasian
+Peixe gato,Pelteobagrus Fulvidraco,7.6,12.0,25.0,250.0,25.0,LIVE_WORMS,EGGYLAYER,DARK,DANGER,COMPLETED_SET,BOTTOM,http://goo.gl/YhGgeG,Eurasian
+Perca Chinesa,Sinipera Chuatsi,7.8,12.0,20.0,50.0,500.0,FISH,EGGYLAYER,BRIGHT,DANGER,COMPLETED_SET,ANY,http://goo.gl/pA6eDj,Eurasian
+Tanakia Tanago,Tanakia Tanago,7.0,10.0,20.0,5.0,100.0,DRY_PACKAGE_FOOD,EGGYLAYER,MEDIUM,PEACEFUL,COMPLETED_SET,BOTTOM,http://goo.gl/FTsfO0,Eurasian
+Acheilogmathus Cyanostigma,Acheilogmathus Cyanostigma,7.2,10.0,20.0,6.0,100.0,DRY_PACKAGE_FOOD,EGGYLAYER,MEDIUM,PEACEFUL,COMPLETED_SET,BOTTOM,http://goo.gl/ZIs5J6,Eurasian
+Arraia Hystrix,Potamotrygon Hystrix,6.7,8.0,26.0,122.0,400.0,LIVE_WORMS,EGGYLAYER,DARK,DANGER,ONLY_SUBSTRACT,BOTTOM,http://goo.gl/mRWhnx,Neotropical
+Pagina 216,,,,,,,,,,,,,,
